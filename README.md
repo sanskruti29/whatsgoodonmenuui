@@ -82,7 +82,7 @@ Note: Container exposes 8080 and is mapped to local port 8080
 ````
 You can browse the website at:
 ````
-curl http://localhost:8880
+curl http://localhost:8080
 ````
 See all running docker containers using:
 ````
