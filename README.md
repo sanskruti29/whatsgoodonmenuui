@@ -66,3 +66,91 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+======================= Docker ==================  
+After making any changes, update following command with new version number.
+Execute to build the image and push it:  
+````
+docker build -t menuui:v1 .  
+````
+You can run the image locally using
+````
+docker run --name menuuidocker --rm -p 8080:8080 menuui:v1
+Note: Container exposes 8080 and is mapped to local port 8080
+````
+You can browse the website at:
+````
+curl http://localhost:8880
+````
+See all running docker containers using:
+````
+docker ps
+````
+To stop running container
+````
+docker stop menuuidocker
+````
+======================= Docker ==================  
+======================= Docker Prod ==================  
+````
+docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v1 .    
+docker push gcr.io/kubegcp-256806/menu-ui:v1  
+docker run --name menuuidocker --rm -p 8080:8080 gcr.io/kubegcp-256806/menu-ui:v1  
+Note: Container exposes 8080 and is mapped to local port 8880
+docker stop menuuidocker  
+````
+======================= Docker Prod ==================  
+======================= Kubernetese Prod ==================  
+To create required google managed certs, execute
+```` 
+kubectl apply -f k8s/menu-ui-menu-coderprabhu-cert.yaml  
+````
+To remove all k8s objects, execute
+````
+kubectl delete -f k8s/menu-ui-backend-service.yaml  
+kubectl delete -f k8s/menu-ui-deployment.yaml  
+````
+When code is updated update the deployment yaml with new 
+container image versions.
+To create or update the k8s deployment
+````
+kubectl apply -f k8s/menu-ui-deployment.yaml  
+kubectl apply -f k8s/menu-ui-backend-service.yaml  
+````
+For Ingress/Load Balancer, following command from https://github.com/CoderPraBhu/coderprabhu-k8s is applied. 
+It includes following: 
+````
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: coderprabhu-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: coderprabhu-ip
+    networking.gke.io/managed-certificates: "menucoderprabhudotcommanagedcert"
+  labels:
+    app: coderprabhu-ui
+spec:
+  rules:
+  - host: menu.coderprabhu.com
+    http:
+      paths:
+        - path: /*
+          backend:
+            serviceName: menu-ui-backend
+            servicePort: httpuiport            
+````
+````
+kubectl apply -f coderprabhu-ingress.yaml
+kubectl describe ingress coderprabhu-ingress
+````
+Additional commands:  
+````
+kubectl describe managedcertificate menucoderprabhudotcommanagedcert
+kubectl get deployment menu-ui-web
+kubectl describe deployment menu-ui-web
+kubectl get service menu-ui-backend
+kubectl describe service menu-ui-backend
+````
+======================= Kubernetese Prod ==================  
