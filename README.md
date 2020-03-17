@@ -89,15 +89,18 @@ See all running docker containers using:
 docker ps
 ````
 To stop running container
+
 ````
+
 docker stop menuuidocker
 ````
+
 ======================= Docker ==================  
 ======================= Docker Prod ==================  
 ````
-docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v1 .    
-docker push gcr.io/kubegcp-256806/menu-ui:v1  
-docker run --name menuuidocker --rm -p 8080:8080 gcr.io/kubegcp-256806/menu-ui:v1  
+docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v2 .    
+docker push gcr.io/kubegcp-256806/menu-ui:v2 
+docker run --name menuuidocker --rm -p 8080:8080 gcr.io/kubegcp-256806/menu-ui:v2  
 Note: Container exposes 8080 and is mapped to local port 8880
 docker stop menuuidocker  
 ````
@@ -154,3 +157,14 @@ kubectl get service menu-ui-backend
 kubectl describe service menu-ui-backend
 ````
 ======================= Kubernetese Prod ==================  
+
+
+================== Production Deployment ================== 
+````
+docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v2 .    
+docker push gcr.io/kubegcp-256806/menu-ui:v2 
+````
+Change version in k8s ->  menu-ui-deployment
+````
+kubectl apply -f k8s/menu-ui-deployment.yaml 
+````
