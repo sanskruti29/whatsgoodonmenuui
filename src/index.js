@@ -9,7 +9,7 @@ import { Navigation } from "./components/Navigation";
 class MyApp extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
             <Header />
             <Navigation />
             <Home />

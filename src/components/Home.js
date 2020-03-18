@@ -16,7 +16,6 @@ function Avatar(props) {
 function UserInfo(props){
     return(
         <div className = "userInfo">
-            <Avatar user={props.user} />
             <div className = "UserInfoName">
                 {props.user.name}
             </div>
@@ -41,8 +40,8 @@ const comment = {
     date: new Date(),
     text: 'Brunch at Pacific Heights Cafe',
     author: {
-        name: 'Review By: Sanskruti',
-        avatarUrl: 'https://whatsgoodonmenu.com/graphics/brunch.jpg'
+        name: 'Review By: Sanskruti'
+        /*avatarUrl: 'http://old.whatsgoodonmenu.com/graphics/brunch.jpg'*/
     },
 };
 

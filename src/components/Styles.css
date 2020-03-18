@@ -2,10 +2,10 @@
     background-color: #C21A09;
     color: white;
     font-family: 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: left;
     padding: 0.5em;
     margin-top: 0em;
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .photoStyle{
@@ -14,6 +14,9 @@
     align-items: center;
   }
 
+  .NavOptions{
+    text-align: right;
+  }
   .NavStyle{
       /*overflow: hidden;*/
       background-color: #7E191B;
@@ -27,7 +30,7 @@
 
 
  
-/* Style the topnav links */
+/* Style the NavStyle links */
 .NavStyle a	{
       float: left;
       display: block;
