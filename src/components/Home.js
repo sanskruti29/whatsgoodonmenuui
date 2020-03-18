@@ -1,18 +1,22 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-/*
-export class Home extends React.Component{
-    render(){
-        return(
-            <div>
-                <p>This is my home component</p>
-            </div>
-        );
-    }
-} */
+import './Styles.css';
+
+function Avatar(props) {
+    return (
+      <img
+        className="photoStyle"
+        width="500"
+        height="700"
+        src={props.user.avatarUrl}
+        alt={props.user.name}
+      />
+    );
+  }
+
 function UserInfo(props){
     return(
         <div className = "userInfo">
+            <Avatar user={props.user} />
             <div className = "UserInfoName">
                 {props.user.name}
             </div>
@@ -35,9 +39,10 @@ function Comment(props){
 
 const comment = {
     date: new Date(),
-    text: 'I am learning React',
+    text: 'Brunch at Pacific Heights Cafe',
     author: {
-        name: 'Author: Sanskruti!'
+        name: 'Review By: Sanskruti',
+        avatarUrl: 'https://whatsgoodonmenu.com/graphics/brunch.jpg'
     },
 };
 

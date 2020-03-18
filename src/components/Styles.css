@@ -1,0 +1,47 @@
+.HeaderFooterStyle {
+    background-color: #C21A09;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 0.5em;
+    margin-top: 0em;
+    font-size: 2em;
+  }
+
+  .photoStyle{
+    margin-top: auto;
+    padding: 0.5em;
+    align-items: center;
+  }
+
+  .NavStyle{
+      /*overflow: hidden;*/
+      background-color: #7E191B;
+      font-size: medium;
+      font-weight:bold;
+      color: #FFFFFF;
+      padding: 10px 10px;
+      text-decoration: none;
+      display: block;
+  }
+
+
+ 
+/* Style the topnav links */
+.NavStyle a	{
+      float: left;
+      display: block;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 10px 10px;
+      text-decoration: none;
+      }
+      
+.NavStyle a:visited	{color:#FFFFFF;}
+.NavStyle a:active	{color: #FFFFFF;}
+
+/* Change color on hover */
+.top_nav a:hover {
+      background-color:#C21A09;
+      color: #FFFFFF;
+  }

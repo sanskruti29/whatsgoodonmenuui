@@ -108,9 +108,9 @@ docker stop menuuidocker
 ======================= Kubernetese Prod ==================  
 To create required google managed certs, execute
 ```` 
-kubectl apply -f k8s/menu-ui-menu-coderprabhu-cert.yaml  
-
+kubectl apply -f k8s/menu-ui-menu-coderprabhu-cert.yaml
 kubectl apply -f k8s/menu-ui-whatsgoodonmenu-cert.yaml  
+kubectl apply -f k8s/menu-ui-wwwwhatsgoodonmenu-cert.yaml
 ````
 To remove all k8s objects, execute
 ````
@@ -154,6 +154,8 @@ Additional commands:
 ````
 kubectl describe managedcertificate menucoderprabhudotcommanagedcert
 kubectl describe managedcertificate whatsgoodonmenudotcommanagedcert
+kubectl describe managedcertificate wwwwhatsgoodonmenudotcommanagedcert
+
 kubectl get deployment menu-ui-web
 kubectl describe deployment menu-ui-web
 kubectl get service menu-ui-backend
