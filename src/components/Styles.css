@@ -12,6 +12,8 @@
     margin-top: auto;
     padding: 0.5em;
     align-items: center;
+    width: 400px;
+    height: 600px;
   }
 
   .NavOptions{

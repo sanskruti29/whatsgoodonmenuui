@@ -1,12 +1,11 @@
 import React from "react";
 import './Styles.css';
+import { createPortal } from "react-dom";
 
 function Avatar(props) {
     return (
       <img
         className="photoStyle"
-        width="500"
-        height="700"
         src={props.user.avatarUrl}
         alt={props.user.name}
       />
@@ -16,6 +15,7 @@ function Avatar(props) {
 function UserInfo(props){
     return(
         <div className = "userInfo">
+            <Avatar user={props.user} />
             <div className = "UserInfoName">
                 {props.user.name}
             </div>
@@ -30,7 +30,12 @@ function Comment(props){
                 {props.text}
             </div>
             <div className="CommentDate">
-                {props.date.toLocaleDateString()}
+                <div>
+                    {props.date.toLocaleDateString()}
+                </div>
+                <div>
+                    {props.time.toLocaleTimeString()}
+                </div>
             </div>
         </div>
     )
@@ -38,10 +43,11 @@ function Comment(props){
 
 const comment = {
     date: new Date(),
+    time : new Date(),
     text: 'Brunch at Pacific Heights Cafe',
     author: {
-        name: 'Review By: Sanskruti'
-        /*avatarUrl: 'http://old.whatsgoodonmenu.com/graphics/brunch.jpg'*/
+        name: 'Review By: Sanskruti',
+        avatarUrl: 'http://old.whatsgoodonmenu.com/graphics/brunch.jpg'
     },
 };
 
@@ -50,9 +56,12 @@ export class Home extends React.Component{
         return(
             <Comment
                 date = {comment.date}
+                time = {comment.time}
                 text = {comment.text}
                 author = {comment.author}
             />
         );    
     }
 }
+
+setInterval(comment, 1000);
