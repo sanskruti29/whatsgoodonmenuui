@@ -1,33 +1,34 @@
 import React from "react";
+import './Styles.css';
 
-export class Clock extends React.Component {
-  constructor(props) {
+function FormattedDate(props) {
+  return <h2>Local time is {props.date.toLocaleTimeString()}.</h2>;
+}
+
+export class Clock extends React.Component{
+  constructor(props){
     super(props);
     this.state = {date: new Date()};
   }
-
-  componentDidMount() {
+  componentDidMount(){
     this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+      ()=> this.tick(),1000
+    )
   }
-
-  componentWillUnmount() {
+  componentWillMount(){
     clearInterval(this.timerID);
   }
-
-  tick() {
+  tick(){
     this.setState({
       date: new Date()
     });
   }
 
-  render() {
-    return (
-      <div>
-        <h2>Local Time is {this.state.date.toLocaleTimeString()}.</h2>
+  render(){
+    return(
+      <div className="allText"> 
+        <FormattedDate date={this.state.date} />
       </div>
-    );
+    )
   }
 }
