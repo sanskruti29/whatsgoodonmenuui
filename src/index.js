@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Header } from "./components/Header";
+import { Clock } from "./components/Clock";
 import { Home } from "./components/Home";
 import { Footer } from "./components/Footer";
 import './components/Styles.css';
+
 /*import { Navigation } from "./components/Navigation";*/
 
 class MyApp extends React.Component {
@@ -11,10 +13,11 @@ class MyApp extends React.Component {
     return (
       <div>
             <Header />
+            <Clock />
             <Home />
             <Footer />
       </div>
     );
   }
 }
-ReactDOM.render(<MyApp />, document.getElementById("root"));
+ReactDOM.render(<MyApp />, document.getElementById('root'));

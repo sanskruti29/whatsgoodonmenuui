@@ -1,6 +1,5 @@
 import React from "react";
 import './Styles.css';
-import { createPortal } from "react-dom";
 
 function Avatar(props) {
     return (
@@ -22,6 +21,7 @@ function UserInfo(props){
         </div>
     )
 }
+
 function Comment(props){
     return(
         <div className="Comment">
@@ -33,17 +33,21 @@ function Comment(props){
                 <div>
                     {props.date.toLocaleDateString()}
                 </div>
-                <div>
-                    {props.time.toLocaleTimeString()}
-                </div>
             </div>
         </div>
     )
 }
+/*
+function Clock(props){
+    return(
+        <div>
+            <h2>It is {props.time.toLocaleTimeString()}.</h2>
+        </div>
+    )
+}*/
 
 const comment = {
     date: new Date(),
-    time : new Date(),
     text: 'Brunch at Pacific Heights Cafe',
     author: {
         name: 'Review By: Sanskruti',
@@ -54,14 +58,13 @@ const comment = {
 export class Home extends React.Component{
     render(){
         return(
-            <Comment
-                date = {comment.date}
-                time = {comment.time}
-                text = {comment.text}
-                author = {comment.author}
-            />
+            <div>
+                <Comment
+                    date = {comment.date}
+                    text = {comment.text}
+                    author = {comment.author}
+                 />
+            </div>    
         );    
     }
 }
-
-setInterval(comment, 1000);

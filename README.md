@@ -185,8 +185,8 @@ kubectl describe service menu-ui-backend
 ================== Production Deployment ==================
 
 ````
-docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v7 .
-docker push gcr.io/kubegcp-256806/menu-ui:v7
+docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v9 .
+docker push gcr.io/kubegcp-256806/menu-ui:v9
 ````
 
 Change version in k8s ->  menu-ui-deployment
