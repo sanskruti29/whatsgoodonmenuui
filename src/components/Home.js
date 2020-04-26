@@ -51,7 +51,7 @@ const comment = {
     text: 'Brunch at Pacific Heights Cafe',
     author: {
         name: 'Review By: Sanskruti',
-        avatarUrl: 'http://old.whatsgoodonmenu.com/graphics/brunch.jpg'
+        avatarUrl: 'https://old.whatsgoodonmenu.com/graphics/brunch.jpg'
     },
 };
 

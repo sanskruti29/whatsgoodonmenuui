@@ -7,7 +7,6 @@ export class Header extends React.Component {
     return (
         <div className = "HeaderFooterStyle">
           <h1>Whats Good on Menu</h1>
-          <LoginButton />
       </div>
     );
   }
