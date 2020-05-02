@@ -1,14 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: menu-ui-web
   labels:
     app: menu-ui
+  name: menu-ui-web
+  namespace: default
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: menu-ui
       tier: web
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -16,14 +23,16 @@ spec:
         tier: web
     spec:
       containers:
-      - name: menu-ui-app
-        image: gcr.io/kubegcp-256806/menu-ui:v12
-        ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            cpu: "0.05"
-            memory: "24Mi"
-          limits:
-            cpu: "0.2"  
-            memory: "128Mi" 
+        - image: gcr.io/kubegcp-256806/github.com/sanskruti29/whatsgoodonmenuui
+          imagePullPolicy: IfNotPresent
+          name: menu-ui-app
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 24Mi

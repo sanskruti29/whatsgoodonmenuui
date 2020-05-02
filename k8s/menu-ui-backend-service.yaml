@@ -1,20 +1,26 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: menu-ui-backend
   labels:
     app: menu-ui
+  name: menu-ui-backend
+  namespace: default
 spec:
-  type: NodePort
+  clusterIP: 10.27.251.232
+  externalTrafficPolicy: Cluster
+  ports:
+    - name: httpuiport
+      nodePort: 32718
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: httpsuiport
+      nodePort: 31140
+      port: 443
+      protocol: TCP
+      targetPort: 8080
   selector:
     app: menu-ui
     tier: web
-  ports:
-  - name: httpuiport
-    protocol: TCP
-    port: 8080
-    targetPort: 8080
-  - name: httpsuiport
-    protocol: TCP
-    port: 443
-    targetPort: 8080
+  sessionAffinity: None
+  type: NodePort
