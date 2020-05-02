@@ -1,11 +1,12 @@
 import React from "react";
 import './Styles.css';
+import smoothie from './images/smoothie.jpg';
 
 function Avatar(props) {
     return (
       <img
         className="photoStyle"
-        src={props.user.avatarUrl}
+        src= {smoothie}
         alt={props.user.name}
       />
     );
@@ -51,7 +52,7 @@ const comment = {
     text: 'Brunch at Pacific Heights Cafe',
     author: {
         name: 'Review By: Sanskruti',
-        avatarUrl: 'https://old.whatsgoodonmenu.com/graphics/brunch.jpg'
+        avatarUrl: 'images/smoothie.jpg',
     },
 };
 
