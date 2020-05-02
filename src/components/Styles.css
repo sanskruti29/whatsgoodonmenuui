@@ -1,0 +1,90 @@
+.allText {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+}
+
+.LoginButton :hover {
+  background-color:#7e191b;
+}
+
+.LoginButton{
+  color:  white;
+  border: white;
+  border-radius: 0.1em;
+  background-color: #c21a09;
+  font-size: large;
+  padding: 0.5em;
+}
+
+
+.HeaderFooterStyle {
+  background-color: #c21a09;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+  padding: 0.5em;
+  margin-top: 0em;
+  font-size: 1em;
+
+}
+
+.photoStyle {
+  margin-top: auto;
+  padding: 0.5em;
+  align-items: center;
+  width: 400px;
+  height: 600px;
+}
+
+.NavOptions {
+  text-align: right;
+}
+.NavStyle {
+  /*overflow: hidden;*/
+  background-color: #7e191b;
+  font-size: medium;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style the NavStyle links */
+.NavStyle a {
+  float: left;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.NavStyle a:visited {
+  color: #ffffff;
+}
+.NavStyle a:active {
+  color: #ffffff;
+}
+
+/* Change color on hover */
+.top_nav a:hover {
+  background-color: #c21a09;
+  color: #ffffff;
+}
+
+.resetButton {
+  background-color: #c21a09;
+  color: #ffffff;
+  border: 0ch;
+  		padding: 12px 20px;
+  		text-decoration: none;
+  		margin: 4px 2px;
+  		cursor: pointer;
+  		font-size: medium;
+}
+
+.resetButton :hover{
+  background-color: #7e191b;
+  color: #ffffff;
+}

@@ -1,19 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Header } from "./components/Header";
+import { Clock } from "./components/Clock";
 import { Home } from "./components/Home";
 import { Footer } from "./components/Footer";
-import './components/Header.css';
+import { MyForm } from "./components/MyForm"
+import './components/Styles.css';
+
+/*import { Navigation } from "./components/Navigation";*/
 
 class MyApp extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
             <Header />
+            <Clock />
+            <MyForm />
             <Home />
-            <Footer />
+            <Footer /> 
       </div>
     );
   }
 }
-ReactDOM.render(<MyApp />, document.getElementById("root"));
+ReactDOM.render(<MyApp />, document.getElementById('root'));

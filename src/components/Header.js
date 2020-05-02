@@ -1,11 +1,12 @@
 import React from "react";
-import './Header.css';
+import { LoginButton} from './LoginButton';
+import './Styles.css';
 
 export class Header extends React.Component {
   render() {
     return (
-      <div className="HeaderStyle"> 
-        <h1>Whats Good on Menu</h1>
+        <div className = "HeaderFooterStyle">
+          <h1>Whats Good on Menu</h1>
       </div>
     );
   }

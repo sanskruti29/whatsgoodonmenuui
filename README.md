@@ -1,3 +1,4 @@
+## Read me
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -45,49 +46,55 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+This section has moved here: <https://facebook.github.io/create-react-app/docs/code-splitting>
 
 ### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+This section has moved here: <https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size>
 
 ### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+This section has moved here: <https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app>
 
 ### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This section has moved here: <https://facebook.github.io/create-react-app/docs/advanced-configuration>
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This section has moved here: <https://facebook.github.io/create-react-app/docs/deployment>
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-
+This section has moved here: <https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify>
 
 ======================= Docker ==================  
 After making any changes, update following command with new version number.
 Execute to build the image and push it:  
+
 ````
 docker build -t menuui:v1 .  
 ````
+
 You can run the image locally using
+
 ````
 docker run --name menuuidocker --rm -p 8080:8080 menuui:v1
 Note: Container exposes 8080 and is mapped to local port 8080
 ````
+
 You can browse the website at:
+
 ````
 curl http://localhost:8080
 ````
+
 See all running docker containers using:
+
 ````
 docker ps
 ````
+
 To stop running container
 
 ````
@@ -97,6 +104,7 @@ docker stop menuuidocker
 
 ======================= Docker ==================  
 ======================= Docker Prod ==================  
+
 ````
 docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v2 .    
 docker push gcr.io/kubegcp-256806/menu-ui:v2 
@@ -104,26 +112,35 @@ docker run --name menuuidocker --rm -p 8080:8080 gcr.io/kubegcp-256806/menu-ui:v
 Note: Container exposes 8080 and is mapped to local port 8880
 docker stop menuuidocker  
 ````
+
 ======================= Docker Prod ==================  
-======================= Kubernetese Prod ==================  
+======================= Kubernetes Prod ==================  
 To create required google managed certs, execute
+
 ```` 
-kubectl apply -f k8s/menu-ui-menu-coderprabhu-cert.yaml  
+kubectl apply -f k8s/menu-ui-menu-coderprabhu-cert.yaml
+kubectl apply -f k8s/menu-ui-whatsgoodonmenu-cert.yaml  
+kubectl apply -f k8s/menu-ui-wwwwhatsgoodonmenu-cert.yaml
 ````
+
 To remove all k8s objects, execute
 ````
 kubectl delete -f k8s/menu-ui-backend-service.yaml  
 kubectl delete -f k8s/menu-ui-deployment.yaml  
 ````
+
 When code is updated update the deployment yaml with new 
 container image versions.
 To create or update the k8s deployment
+
 ````
 kubectl apply -f k8s/menu-ui-deployment.yaml  
 kubectl apply -f k8s/menu-ui-backend-service.yaml  
 ````
+
 For Ingress/Load Balancer, following command from https://github.com/CoderPraBhu/coderprabhu-k8s is applied. 
 It includes following: 
+
 ````
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -142,29 +159,38 @@ spec:
         - path: /*
           backend:
             serviceName: menu-ui-backend
-            servicePort: httpuiport            
+            servicePort: httpuiport
 ````
+
 ````
 kubectl apply -f coderprabhu-ingress.yaml
 kubectl describe ingress coderprabhu-ingress
 ````
+
 Additional commands:  
+
 ````
 kubectl describe managedcertificate menucoderprabhudotcommanagedcert
+kubectl describe managedcertificate whatsgoodonmenudotcommanagedcert
+kubectl describe managedcertificate wwwwhatsgoodonmenudotcommanagedcert
+
 kubectl get deployment menu-ui-web
 kubectl describe deployment menu-ui-web
 kubectl get service menu-ui-backend
 kubectl describe service menu-ui-backend
 ````
-======================= Kubernetese Prod ==================  
 
+======================= Kubernetes Prod ==================  
 
-================== Production Deployment ================== 
+================== Production Deployment ==================
+
 ````
-docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v2 .    
-docker push gcr.io/kubegcp-256806/menu-ui:v2 
+docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v12 .
+docker push gcr.io/kubegcp-256806/menu-ui:v12
 ````
+
 Change version in k8s ->  menu-ui-deployment
+
 ````
-kubectl apply -f k8s/menu-ui-deployment.yaml 
+kubectl apply -f k8s/menu-ui-deployment.yaml
 ````
