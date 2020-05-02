@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: menu-ui-web
+  labels:
+    app: menu-ui
+spec:
+  selector:
+    matchLabels:
+      app: menu-ui
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: menu-ui
+        tier: web
+    spec:
+      containers:
+      - name: menu-ui-app
+        image: gcr.io/kubegcp-256806/menu-ui:v12
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "0.05"
+            memory: "24Mi"
+          limits:
+            cpu: "0.2"  
+            memory: "128Mi" 
