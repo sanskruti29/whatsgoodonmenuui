@@ -88,3 +88,51 @@
   background-color: #7e191b;
   color: #ffffff;
 }
+
+.website-ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.menu-ul {
+  list-style-type: none;
+  margin: 0;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.menu-ul li {
+  display: inline;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.logoStyle{
+  width: 320px;
+  height: 90px;
+  padding: 0.1em;
+}
+
+.menuStyle{ 
+  width: 100px;
+  height: 80px;
+}
+
+.header {
+  background-color: #c21a09;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  padding: 0.2em;
+  font-size: 1.5em;
+}
+
+.header :any-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header :hover {
+  /*color: #7e191b; */
+  color: #380000;
+}

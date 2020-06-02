@@ -6,21 +6,29 @@ import { Home } from "./components/Home";
 import { Footer } from "./components/Footer";
 import { MyForm } from "./components/MyForm"
 import './components/Styles.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import CreateAccount from "./components/CreateAccount";
+import Login from "./components/Login";
 
 /*import { Navigation } from "./components/Navigation";*/
 
 class MyApp extends React.Component {
   render() {
     return (
-      <div>
+      <Router>
+        <div>
             <Header />
-            <Clock />
-            <Clock />
-            <MyForm />
             <Home />
-            <Footer /> 
-      </div>
+        </div>
+      </Router>
     );
   }
 }
 ReactDOM.render(<MyApp />, document.getElementById('root'));
+/* <Route path = "/" component={Home}></Route>
+<Route path = "/CreateAccount" component={CreateAccount}></Route>
+            <Route path = "/login" component={Login}></Route>
+            <Clock />
+            <Clock />
+            <MyForm />
+            <Footer /> */
