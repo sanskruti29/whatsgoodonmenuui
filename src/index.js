@@ -19,6 +19,7 @@ class MyApp extends React.Component {
         <div>
             <Home />
             <Clock />
+            <Clock />
             <MyForm />
             <Footer />
         </div>
