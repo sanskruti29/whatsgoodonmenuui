@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import './Styles.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import menu from './images/menu.png';
-import logo from './images/logo.png';
 
 export class Header extends React.Component {
   render() {
@@ -12,13 +11,13 @@ export class Header extends React.Component {
         <img className='menuStyle' src={menu}/>
         <ul className = "menu-ul">
           <li>
-            <Link to="/">Whats Good on Menu</Link>
+            <NavLink to="/">Whats Good on Menu</NavLink>
           </li>
           <li>
-            <Link to="/CreateAccount">Create Account</Link>
+            <NavLink to="/CreateAccount">Create Account</NavLink>
           </li>
           <li>
-            <Link to="/Login">Login</Link>
+            <NavLink to='/Login'>Login</NavLink>
           </li>
         </ul>
       </div>

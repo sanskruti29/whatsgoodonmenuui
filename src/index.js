@@ -13,12 +13,14 @@ import Login from "./components/Login";
 /*import { Navigation } from "./components/Navigation";*/
 
 class MyApp extends React.Component {
-  render() {
+  render() {  
     return (
       <Router>
         <div>
-            <Header />
             <Home />
+            <Clock />
+            <MyForm />
+            <Footer />
         </div>
       </Router>
     );
@@ -28,7 +30,4 @@ ReactDOM.render(<MyApp />, document.getElementById('root'));
 /* <Route path = "/" component={Home}></Route>
 <Route path = "/CreateAccount" component={CreateAccount}></Route>
             <Route path = "/login" component={Login}></Route>
-            <Clock />
-            <Clock />
-            <MyForm />
-            <Footer /> */
+          */

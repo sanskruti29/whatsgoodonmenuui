@@ -1,6 +1,6 @@
 import React from "react";
-export class CreateAccount extends React.Component{
 
+export class CreateAccount extends React.Component{
     render(){
         return(
             <h1>

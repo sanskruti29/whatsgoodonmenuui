@@ -136,3 +136,13 @@
   /*color: #7e191b; */
   color: #380000;
 }
+
+.brandNameFontStyle {
+  color: "white";
+  font-family: initial;
+  font-size: x-large;
+}
+
+.navBarColorStyle {
+  background-color:#c21a09;
+}
