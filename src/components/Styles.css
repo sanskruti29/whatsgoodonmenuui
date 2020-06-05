@@ -73,21 +73,61 @@
   color: #ffffff;
 }
 
+/*-----------------------------*/
+/* Buttons on CreateAccount.js */
+
+
+
 .resetButton {
   background-color: #c21a09;
   color: #ffffff;
   border: 0ch;
-  		padding: 12px 20px;
-  		text-decoration: none;
-  		margin: 4px 2px;
-  		cursor: pointer;
-  		font-size: medium;
+  text-decoration: none;
+  flex: 1; 
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: medium;
+  padding: 12px 20px;
+  margin: 5px 10px 0px 10px;
 }
+
+/*
+margin: 4px 2px;
+padding: 12px 20px;
+cursor: pointer;
 
 .resetButton :hover{
   background-color: #7e191b;
   color: #ffffff;
 }
+
+.buttonStyle {
+  padding: 5;
+  flex: 1; 
+  flex-direction: row;
+  justify-content: space-around;
+}
+*/
+
+.submitButton {
+  background-color: #c21a09;
+  color: #ffffff;
+  border: 0ch;
+  padding: 12px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: medium;
+}
+
+/*
+.submitButton :hover{
+  background-color: #7e191b;
+  color: #ffffff;
+}
+*/
+
+/* Buttons on CreateAccount.js */
+/*-----------------------------*/
 
 .website-ul {
   list-style-type: none;
@@ -145,4 +185,16 @@
 
 .navBarColorStyle {
   background-color:#c21a09;
+}
+
+.alignCenterForm {
+  padding-left: 38em;
+  padding-top: 10em;
+  
+}
+
+/* createAccount input area style */
+.inputAreaStyle {
+  padding: 0.2cm;
+  width: 7cm;
 }
