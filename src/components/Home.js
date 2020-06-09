@@ -1,24 +1,11 @@
 import React from "react";
 import './Styles.css';
-import smoothie from './images/smoothie.jpg';
 import './Styles.css';
 import Header from './Header';
-import Footer from './Footer';
-
-function Avatar(props) {
-    return (
-      <img
-        className="photoStyle"
-        src= {smoothie}
-        alt={props.user.name}
-      />
-    );
-  }
 
 function UserInfo(props){
     return(
         <div className = "userInfo">
-            <Avatar user={props.user} />
             <div className = "UserInfoName">
                 {props.user.name}
             </div>
@@ -29,33 +16,25 @@ function UserInfo(props){
 function Comment(props){
     return(
         <div className="Comment">
-            <UserInfo user={props.author} />
+            <div className="CommentDate">
+                <div>
+                    <h6>It is {props.date.toLocaleDateString()} and {props.time.toLocaleTimeString()}</h6>
+                </div>
+            </div>
             <div className = "CommentText">
                 {props.text}
             </div>
-            <div className="CommentDate">
-                <div>
-                    {props.date.toLocaleDateString()}
-                </div>
-            </div>
+            <UserInfo user={props.author} />
         </div>
     )
 }
-/*
-function Clock(props){
-    return(
-        <div>
-            <h2>It is {props.time.toLocaleTimeString()}.</h2>
-        </div>
-    )
-}*/
 
 const comment = {
     date: new Date(),
-    text: 'Brunch at Pacific Heights Cafe',
+    time: new Date(),
+    text: "This site is currently under development. Thanks for visiting!",
     author: {
-        name: 'Review By: Sanskruti',
-        avatarUrl: 'images/smoothie.jpg',
+        name: '- Sanskruti Kolpe'
     },
 };
 
@@ -66,10 +45,10 @@ export default class Home extends React.Component{
             <Header/>
             <Comment
               date = {comment.date}
-              text = {comment.text}
               author = {comment.author}
+              text = {comment.text}
+              time ={comment.time}
             />
-            <Footer/>
           </div>    
         );    
     }

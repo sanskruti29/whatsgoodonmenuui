@@ -7,6 +7,7 @@ import NotFoundPage from "./components/404";
 import Home from "./components/Home";
 import AddRestaurantPage from "./components/AddRestaurant";
 import LoginPage from "./components/Login";
+import PracticeForm from "./components/PracticeForm";
 
 class App extends Component{
   render(){
@@ -17,6 +18,7 @@ class App extends Component{
         <Route exact path="/login" component={LoginPage}></Route>
         <Route exact path="/createAccount" component={CreateAccountPage}></Route>
         <Route exact path="/addRestaurant" component={AddRestaurantPage}></Route>
+        <Route exact path="/practiceForm" component={PracticeForm}></Route>
         <Route exact path="/404" component={NotFoundPage}></Route>
         <Redirect to="/404" />
         </Switch>

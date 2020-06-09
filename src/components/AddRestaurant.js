@@ -8,22 +8,21 @@ export default class AddRestaurantPage extends React.Component {
     constructor(props) {
         super(props);
         //this.state = {value: ''};
-        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReset = this.handleReset.bind(this);
     }
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
+   
+    handleSubmit =(event) => {
+        console.log('Form was submitted');
+        event.preventDefault();
+        const data = new FormData(event.target);
+        for (var [key, value] of data.entries()) {
+            console.log(`${key}` , ":" ,`${value}`);
+        }
     }
 
     handleReset = () => {
         this.form.reset() // resets "username" field to "admin"
-    }
-       
-    handleSubmit =(event) => {
-        console.log('Form was submitted');
-        event.preventDefault();
     }
     
     render() {
@@ -94,18 +93,20 @@ export default class AddRestaurantPage extends React.Component {
                     type="text"
                 />
                 <br/><br/>
-                <input 
+                <button 
                     className="submitButton" 
                     type="submit"
-                    onClick={this.handleSubmit} 
+                    //onClick={this.handleSubmit} 
                     value="Submit"
-                /> 
-                <input 
+                > Submit
+                </button>
+                <button 
                     className="resetButton" 
                     type="reset"
                     onClick={this.handleReset} 
                     value="Reset"
-                />
+                > Reset
+                </button>
                 </Form>
             </div>           
         )

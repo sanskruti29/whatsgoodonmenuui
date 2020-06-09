@@ -5,69 +5,74 @@ import Header from './Header';
 import './Styles.css';
 
 export default class CreateAccountPage extends React.Component {
-    constructor(props) {
-        super(props);
-        //this.state = {value: ''};
-        this.handleChange = this.handleChange.bind(this);
+    constructor() {
+        super();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReset = this.handleReset.bind(this);
     }
 
-    handleReset = () => {
-        this.form.reset() // resets "username" field to "admin"
-    }
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
-
     handleSubmit(event) {
-        console.log('Form was submitted');
         event.preventDefault();
+        console.log("Event", event);
+        const data = new FormData(event.target);
+        console.log("Data", data);
+        for (var [key, value] of data.entries()) {
+            console.log(`${key}` , ":" ,`${value}`);
+        }
+    }
+
+    handleReset = () => {
+        this.form.reset();
     }
 
     render() {
         return ( 
             <div>
                 <Header/> 
-                <form method="post" onSubmit={this.handleSubmit} className="alignCenterForm" ref={form => this.form = form} > 
+                <form className="alignCenterForm" ref={form => this.form = form} onSubmit={this.handleSubmit}> 
                     <legend> Create Account </legend>
                     <input className="inputAreaStyle"
-                        name="FirstName" 
+                        id="firstname"
+                        name="firstname" 
                         type="text"
                         placeholder="First Name"
                     />
                     <br/><br/>
                     <input className="inputAreaStyle"
-                        name="LastName" 
+                        id="lastname"
+                        name="lastname" 
                         type="text"
                         placeholder="Last Name"
                     />
                     <br/><br/>
                     <input className="inputAreaStyle"
-                        name="Email"
+                        id="email"
+                        name="email"
                         type="email"
                         placeholder="Email" 
                     />
                     <br/><br/>
                     <input className="inputAreaStyle"
+                        id="password"
                         name="password"
                         type="password"
-                        placeholder="password" 
+                        placeholder="Password" 
                     />
                     <br/><br/>
-                    <input 
+                    <button 
                         className="submitButton" 
-                        onClick={this.handleSubmit} 
+                        // onClick={this.handleSubmit} 
                         type="submit"
                         value="Create Account"
-                    /> 
-                    <input 
+                    > Create Account
+                    </button>
+                    <button 
                         className="resetButton" 
                         onClick={this.handleReset} 
                         type="reset"
                         value="Reset"
-                    />                 
+                    > Reset
+                    </button>               
                 </form>
             </div> 
         );
