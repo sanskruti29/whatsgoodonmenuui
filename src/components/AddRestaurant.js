@@ -19,6 +19,10 @@ export default class AddRestaurantPage extends React.Component {
         for (var [key, value] of data.entries()) {
             console.log(`${key}` , ":" ,`${value}`);
         }
+         // fetch('/api/form-submit-url', {
+        //     method: 'POST',
+        //     body: data,
+        // });
     }
 
     handleReset = () => {

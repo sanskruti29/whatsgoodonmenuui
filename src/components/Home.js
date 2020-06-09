@@ -2,6 +2,7 @@ import React from "react";
 import './Styles.css';
 import './Styles.css';
 import Header from './Header';
+import UserCount from './UserCount';
 
 function UserInfo(props){
     return(
@@ -15,7 +16,7 @@ function UserInfo(props){
 
 function Comment(props){
     return(
-        <div className="Comment">
+        <div className="Comment" >
             <div className="CommentDate">
                 <div>
                     <h6>It is {props.date.toLocaleDateString()} and {props.time.toLocaleTimeString()}</h6>
@@ -25,6 +26,8 @@ function Comment(props){
                 {props.text}
             </div>
             <UserInfo user={props.author} />
+            <br/>
+            <UserCount/>
         </div>
     )
 }
@@ -44,10 +47,10 @@ export default class Home extends React.Component{
           <div>
             <Header/>
             <Comment
-              date = {comment.date}
-              author = {comment.author}
-              text = {comment.text}
-              time ={comment.time}
+                date = {comment.date}
+                author = {comment.author}
+                text = {comment.text}
+                time ={comment.time}
             />
           </div>    
         );    
