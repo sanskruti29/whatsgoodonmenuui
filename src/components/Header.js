@@ -2,33 +2,30 @@
 import React from "react"
 import './Styles.css'
 import menu from './images/menu.png'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 // import NavDropdown from 'react-bootstrap/NavDropdown'
-import Button from 'react-bootstrap/Button'
 
 export default class Header extends React.Component {
   render(){   
     return(
       <div>
         <Navbar className= "navBarColorStyle" variant="dark" expand="lg">
-          <Navbar.Brand href="#Home">
+          <Navbar.Brand href="/">
             <img
-              alt=""
+              alt="logo"
               src={menu}
-              width="60"
-              height="50"
-              className="d-inline-block align-top"
+              width="50"
+              height="40"
             />
           </Navbar.Brand>
-          <Navbar.Brand href="/" className="brandNameFontStyle">Whats Good on Menu</Navbar.Brand>
+          <Navbar.Brand href="/" className="brandNameFontStyle" >Whats Good on Menu</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link active="false" href="/createAccount">Create Account</Nav.Link>
               <Nav.Link active="true" href="/login">Login</Nav.Link>
+              {/* <Nav.Link active="true" href="/practiceForm">Practice Form</Nav.Link> */}
               <Nav.Link active="true" href="/addRestaurant">Add Restaurant</Nav.Link>
               {/* <NavDropdown active="true" title="My settings " id="basic-nav-dropdown">
                 <NavDropdown.Item href="#Profile">Profile</NavDropdown.Item>
@@ -36,10 +33,10 @@ export default class Header extends React.Component {
                 <NavDropdown.Item href="#MyFavRestaurant">My Favorite Restaurants</NavDropdown.Item>
               </NavDropdown> */}
             </Nav>
-            <Form inline>
+            {/* <Form inline>
               <FormControl type="text" placeholder="Search Restaurants" className="mr-sm-2" /> <br/>
               <Button variant="outline-light">Search</Button>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </Navbar>
       </div>    

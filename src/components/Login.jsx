@@ -5,22 +5,21 @@ export default class LoginPage extends React.Component{
     constructor(props) {
         super(props);
         //this.state = {value: ''};
-        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReset = this.handleReset.bind(this);
-    }
-
-    handleReset = () => {
-        this.form.reset() 
-    }
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
     }
 
     handleSubmit(event) {
         console.log('Form was submitted');
         event.preventDefault();
+        const data = new FormData(event.target);
+        for (var [key, value] of data.entries()) {
+            console.log(`${key}` , ":" ,`${value}`);
+        }
+    }
+
+    handleReset = () => {
+        this.form.reset() 
     }
 
     render() {
@@ -43,7 +42,7 @@ export default class LoginPage extends React.Component{
                     <br/><br/>
                     <input 
                         className="submitButton" 
-                        onClick={this.handleSubmit} 
+                        //onClick={this.handleSubmit} 
                         type="submit"
                         value="Create Account"
                     /> 

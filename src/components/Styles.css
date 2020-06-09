@@ -16,7 +16,6 @@
   padding: 0.5em;
 }
 
-
 .HeaderFooterStyle {
   background-color: #c21a09;
   color: white;
@@ -32,8 +31,6 @@
   margin-top: auto;
   padding: 0.5em;
   align-items: center;
-  width: 400px;
-  height: 600px;
 }
 
 .NavOptions {
@@ -180,6 +177,7 @@ cursor: pointer;
 .brandNameFontStyle {
   color: "white";
   font-family: initial;
+  font-weight: 200;
   font-size: x-large;
 }
 
@@ -188,13 +186,17 @@ cursor: pointer;
 }
 
 .alignCenterForm {
-  padding-left: 38em;
-  padding-top: 10em;
-  
+  margin-left: 40%;
+  margin-top: 10%;
 }
 
 /* createAccount input area style */
 .inputAreaStyle {
   padding: 0.2cm;
   width: 7cm;
+}
+
+.Comment {
+  margin-left: 35%;
+  margin-top: 10%;
 }
