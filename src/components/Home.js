@@ -30,8 +30,8 @@ function Comment(props){
             <UserInfo user={props.author} />
             <br/>
             <UserCount/>
-            <UserVisit/>
             <UserUnique/>
+            <UserVisit/>
         </div>
     )
 }

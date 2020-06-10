@@ -23,7 +23,7 @@ export default class UserCount extends  React.Component {
 
     render(){
         return(
-            <label>Unique users: {this.state.data}</label>
+            <label>Unique visitors: {this.state.data}</label>
         );
     }
 }

@@ -10,12 +10,7 @@ export default class UserCount extends  React.Component {
             ip: "0.0.0.0"
         };
     }
-    // componentDidMount(){
-    //     fetch('https://api.whatsgoodonmenu.com/count, {
-    //         method: 'GET',  
-    //         body: JSON.stringify(data),
-    //     });
-    // }
+
     componentDidMount() {
         fetch(`${API_ROOT}/visit`)
             .then(response => response.json())
@@ -30,8 +25,7 @@ export default class UserCount extends  React.Component {
     render(){
         return(
             <div>
-                <label>User visits: {this.state.device}</label><br/>
-                <label>User ip: {this.state.ip}</label>
+                <label>You are visiting from: {this.state.device}</label><br/>
             </div>
         );
     }

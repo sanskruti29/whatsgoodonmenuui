@@ -175,10 +175,26 @@ cursor: pointer;
 }
 
 .brandNameFontStyle {
-  color: "white";
-  font-family: initial;
-  font-weight: 200;
-  font-size: x-large;
+  color: #ffffff;
+  /* font-family: initial; */
+  font-weight: 300;
+  font-size: large;
+}
+
+.navOptions{
+  color: #ffffff;
+  font-weight: 300;
+  font-size: medium;
+}
+
+.navSpacing{
+  margin-left:30px;
+  margin-right:30px;
+}
+
+.navOptions :hover{
+  text-decoration: underline;
+  /* zoom: 1.05; */
 }
 
 .navBarColorStyle {
@@ -188,7 +204,7 @@ cursor: pointer;
 .alignCenterForm {
   margin-left: 40%;
   margin-top: 10%;
-}
+} 
 
 /* createAccount input area style */
 .inputAreaStyle {
@@ -196,7 +212,17 @@ cursor: pointer;
   width: 7cm;
 }
 
-.Comment {
+/* .Comment {
   margin-left: 35%;
   margin-top: 10%;
+} */
+
+.Comment {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: black;
 }
