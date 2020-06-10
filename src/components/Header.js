@@ -4,39 +4,27 @@ import './Styles.css'
 import menu from './images/menu.png'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-// import NavDropdown from 'react-bootstrap/NavDropdown'
 
 export default class Header extends React.Component {
   render(){   
     return(
       <div>
-        <Navbar className= "navBarColorStyle" variant="dark" expand="lg">
-          <Navbar.Brand href="/">
-            <img
-              alt="logo"
-              src={menu}
-              width="50"
-              height="40"
-            />
+        <Navbar className= "navBarColorStyle" variant="dark" >
+          <Navbar.Brand href="/" className="brandNameFontStyle" >
+          <img
+            alt="logo"
+            src={menu}
+            width="50"
+            height="40"
+          />{' '}
+          Whats Good on Menu
           </Navbar.Brand>
-          <Navbar.Brand href="/" className="brandNameFontStyle" >Whats Good on Menu</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link active="false" href="/createAccount">Create Account</Nav.Link>
-              <Nav.Link active="true" href="/login">Login</Nav.Link>
-              {/* <Nav.Link active="true" href="/practiceForm">Practice Form</Nav.Link> */}
-              <Nav.Link active="true" href="/addRestaurant">Add Restaurant</Nav.Link>
-              {/* <NavDropdown active="true" title="My settings " id="basic-nav-dropdown">
-                <NavDropdown.Item href="#Profile">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="#MyReviews">My Reviews</NavDropdown.Item>
-                <NavDropdown.Item href="#MyFavRestaurant">My Favorite Restaurants</NavDropdown.Item>
-              </NavDropdown> */}
+          <Navbar.Collapse>
+            <Nav className="navOptions">
+              <Nav.Link active="false" href="/createAccount">Create Account</Nav.Link> 
+              <Nav.Link active="false" href="/login">Login</Nav.Link>
+              <Nav.Link active="false" href="/addRestaurant">Add Restaurant</Nav.Link>
             </Nav>
-            {/* <Form inline>
-              <FormControl type="text" placeholder="Search Restaurants" className="mr-sm-2" /> <br/>
-              <Button variant="outline-light">Search</Button>
-            </Form> */}
           </Navbar.Collapse>
         </Navbar>
       </div>    
