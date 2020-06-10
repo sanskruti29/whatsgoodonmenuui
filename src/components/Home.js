@@ -3,6 +3,8 @@ import './Styles.css';
 import './Styles.css';
 import Header from './Header';
 import UserCount from './UserCount';
+import UserVisit from './UserVisit';
+import UserUnique from './UserUnique';
 
 function UserInfo(props){
     return(
@@ -28,6 +30,8 @@ function Comment(props){
             <UserInfo user={props.author} />
             <br/>
             <UserCount/>
+            <UserVisit/>
+            <UserUnique/>
         </div>
     )
 }
