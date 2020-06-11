@@ -19,7 +19,7 @@ function UserInfo(props){
 function Comment(props){
     return(
         <div className="Comment" >
-            <div className="CommentDate">
+            <div>
                 <div>
                     <h6>It is {props.date.toLocaleDateString()} and {props.time.toLocaleTimeString()}</h6>
                 </div>
@@ -39,9 +39,9 @@ function Comment(props){
 const comment = {
     date: new Date(),
     time: new Date(),
-    text: "This site is currently under development. Thanks for visiting!",
+    text: "This site is currently under development.",
     author: {
-        name: '- Sanskruti Kolpe'
+        name: 'Developer: Sanskruti Kolpe'
     },
 };
 
