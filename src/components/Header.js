@@ -3,23 +3,24 @@ import React from "react"
 import './Styles.css'
 import menu from './images/menu.png'
 import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
+import { Nav} from 'react-bootstrap';
 
 export default class Header extends React.Component {
   render(){   
     return(
       <div>
-        <Navbar className= "navBarColorStyle" variant="dark" >
+        <Navbar className= "navBarColorStyle" variant="dark" expand="lg">
           <Navbar.Brand href="/" className="brandNameFontStyle" >
-          <img
-            alt="logo"
-            src={menu}
-            width="50"
-            height="40"
-          />{' '}
-          Whats Good on Menu
+            <img
+              alt="logo"
+              src={menu}
+              width="50"
+              height="40"
+            />{' '}
+            Whats Good on Menu
           </Navbar.Brand>
-          <Navbar.Collapse>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="navOptions">
               <Nav.Link active="false" href="/createAccount">Create Account</Nav.Link> 
               <Nav.Link active="false" href="/login">Login</Nav.Link>
@@ -31,8 +32,6 @@ export default class Header extends React.Component {
     );    
   }
 }
-
-
 /*
 export class Header extends React.Component {
   render() {
