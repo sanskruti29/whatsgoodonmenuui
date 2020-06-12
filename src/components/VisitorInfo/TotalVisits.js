@@ -9,12 +9,7 @@ export default class UserCount extends  React.Component {
           data: null,
         };
     }
-    // componentDidMount(){
-    //     fetch('https://api.whatsgoodonmenu.com/count, {
-    //         method: 'GET',  
-    //         body: JSON.stringify(data),
-    //     });
-    // }
+
     componentDidMount() {
         fetch(`${API_ROOT}/count`)
             .then(response => response.json())

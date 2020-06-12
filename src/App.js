@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 
 //local imports
-import CreateAccountPage from "./components/CreateAccount";
-import NotFoundPage from "./components/404";
-import Home from "./components/Home";
-import AddRestaurantPage from "./components/AddRestaurant";
-import LoginPage from "./components/Login";
-import PracticeForm from "./components/PracticeForm";
+import CreateAccountPage from "./components/pages/CreateAccount";
+import NotFoundPage from "./components/pages/404";
+import Home from "./components/pages/Home";
+import AddRestaurantPage from "./components/pages/AddRestaurant";
+import LoginPage from "./components/pages/Login";
 
 class App extends Component{
   render(){
@@ -18,7 +17,6 @@ class App extends Component{
         <Route exact path="/login" component={LoginPage}></Route>
         <Route exact path="/createAccount" component={CreateAccountPage}></Route>
         <Route exact path="/addRestaurant" component={AddRestaurantPage}></Route>
-        <Route exact path="/practiceForm" component={PracticeForm}></Route>
         <Route exact path="/404" component={NotFoundPage}></Route>
         <Redirect to="/404" />
         </Switch>

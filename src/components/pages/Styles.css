@@ -1,0 +1,104 @@
+/* Clock.js */
+.allText {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+}
+/*-----------------------------*/
+
+/* Footer.js */
+.FooterStyle {
+  background-color: #c21a09;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+  padding: 0.5em;
+  margin-top: 0em;
+  font-size: 1em;
+}
+/*-----------------------------*/
+
+/* CreateAccount, Login, AddRestaurant */
+.resetButton {
+  background-color: #c21a09;
+  color: #ffffff;
+  border: 0ch;
+  text-decoration: none;
+  transition-duration: 0.2s;
+  font-size: medium;
+  padding: 10px 20px;
+}
+
+.resetButton:hover {
+  background-color: #7E191B;
+  color: white;
+}
+/*-----------------------------*/
+
+/* CreateAccount, Login, AddRestaurant */
+.submitButton {
+  background-color: #c21a09;
+  color: #ffffff;
+  border: 0ch;
+  text-decoration: none;
+  transition-duration: 0.2s;
+  font-size: medium;
+  padding: 10px 20px;
+}
+
+.submitButton:hover {
+  background-color: #7E191B;
+  color: white;
+}
+
+.buttonSpace {
+  display: flex;
+  justify-content: space-around;
+}
+/*-----------------------------*/
+
+/* Header.js */
+.brandNameFontStyle {
+  color: #ffffff;
+  /* font-family: initial; */
+  font-weight: 400;
+  font-size: large;
+}
+/*-----------------------------*/
+
+/* Header.js */
+.navOptions{
+  color: #ffffff;
+  font-weight: 300;
+  font-size: medium;
+}
+
+.navOptions :hover{
+  text-decoration: underline;
+  /* zoom: 1.05; */
+}
+/*-----------------------------*/
+
+/* Header.js */
+.navBarColorStyle {
+  background-color:#c21a09;
+}
+/*-----------------------------*/
+
+/* CreateAccount, Login, AddRestaurant */
+.inputAreaStyle {
+  padding: 0.2cm;
+  width: 7cm;
+}
+/*-----------------------------*/
+
+/* Home.js */
+.Comment {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: black;
+}
+/*-----------------------------*/

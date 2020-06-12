@@ -8,7 +8,7 @@ import { Nav} from 'react-bootstrap';
 export default class Header extends React.Component {
   render(){   
     return(
-      <div>
+      <div  className="container-small">
         <Navbar className= "navBarColorStyle" variant="dark" expand="lg">
           <Navbar.Brand href="/" className="brandNameFontStyle" >
             <img
@@ -32,24 +32,3 @@ export default class Header extends React.Component {
     );    
   }
 }
-/*
-export class Header extends React.Component {
-  render() {
-    return (
-      <div className="header">
-        <img className='menuStyle' src={menu}/>
-        <ul className = "menu-ul">
-          <li>
-            <Link to="/">Whats Good on Menu</Link>
-          </li>
-          <li>
-            <Link to="/CreateAccount">Create Account</Link>
-          </li>
-          <li>
-            <Link to='/Login'>Login</Link>
-          </li>
-        </ul>
-      </div>
-    );
-  }
-}*/
