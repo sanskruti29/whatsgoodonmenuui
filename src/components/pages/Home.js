@@ -5,6 +5,7 @@ import Header from './Header';
 import TotalVisits from '../VisitorInfo/TotalVisits';
 import VisitingFrom from '../VisitorInfo/VisitingFrom';
 import UniqueVisitors from '../VisitorInfo/UniqueVisitors';
+import ImageCarousel from './ImageCarousel';
 
 function UserName(props){
     return(
@@ -82,6 +83,7 @@ export default class Home extends React.Component{
         return(
           <div>
             <Header/>
+            <ImageCarousel/>
             <Comment
                 date = {comment.date}
                 user = {comment.user}
