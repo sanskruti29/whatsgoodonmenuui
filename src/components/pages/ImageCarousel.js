@@ -12,7 +12,7 @@ export default class ImageCarousel extends React.Component {
                 <Carousel>
                     <Carousel.Item>
                         <img
-                            className="d-block w-100"
+                            className="d-block w-100"                           
                             src={f1}
                             alt="food1"
                         />
@@ -36,3 +36,7 @@ export default class ImageCarousel extends React.Component {
         );
     }
 }
+//col-md-6
+//col-sm-6
+//col-sx-12
+//mt-1

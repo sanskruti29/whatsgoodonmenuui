@@ -6,6 +6,7 @@ import TotalVisits from '../VisitorInfo/TotalVisits';
 import VisitingFrom from '../VisitorInfo/VisitingFrom';
 import UniqueVisitors from '../VisitorInfo/UniqueVisitors';
 import ImageCarousel from './ImageCarousel';
+import Footer from './Footer';
 
 function UserName(props){
     return(
@@ -50,7 +51,8 @@ function Twitter(props){
 
 function Comment(props){
     return(
-        <div className="Comment" >
+        <div className="jumbotron container Comment"
+            style={{marginTop: 10}}>
             <div>
                 <h6>It is {props.date.toLocaleDateString()} and {props.time.toLocaleTimeString()}</h6>
             </div>
@@ -58,6 +60,7 @@ function Comment(props){
                 {props.text}
             </div>
             <UserName user={props.user}/>
+            <br/>
             <LinkedIn/>
             <GitHub/>
             <Twitter/>
@@ -90,6 +93,7 @@ export default class Home extends React.Component{
                 text = {comment.text}
                 time ={comment.time}
             />
+            <Footer/>
           </div>    
         );    
     }
