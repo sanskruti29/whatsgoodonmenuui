@@ -12,11 +12,12 @@ export default class AddRestaurantPage extends React.Component {
     }
    
     handleSubmit =(event) => {
-        console.log('Form was submitted');
-        alert("Thank you!");
         event.preventDefault();
         const data = new FormData(event.target);
         for (var [key, value] of data.entries()) {
+            if (`${key}`==="RestaurantName") {
+                alert("You will be notified once your restaurant is added, " + value);
+            }
             console.log(`${key}` , ":" ,`${value}`);
         }
          // fetch('/api/form-submit-url', {
@@ -33,7 +34,7 @@ export default class AddRestaurantPage extends React.Component {
         return (
             <div>
                 <Header/>
-                <div className="jumbotron container d-flex justify-content-center">
+                <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
                     <form method="post" onSubmit={this.handleSubmit}  ref={form => this.form = form}>
                     <legend> Add Restaurant </legend>
                     <input // Restaurant name
