@@ -7,13 +7,31 @@
 
 /* Footer.js */
 .FooterStyle {
-  background-color: #c21a09;
+  /* background-color: #c21a09;
+  position: fixed;
   color: white;
   font-family: "Times New Roman", Times, serif;
   text-align: left;
   padding: 0.5em;
-  margin-top: 0em;
-  font-size: 1em;
+  margin-top: 10;
+  font-size: 1em; 
+
+  position: fixed bottom;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 50px;
+   background-color: red;
+   color: white;
+   text-align: center;
+*/
+   position: fixed bottom;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #c21a09;
+   color: white;
+   text-align: center;
 }
 /*-----------------------------*/
 

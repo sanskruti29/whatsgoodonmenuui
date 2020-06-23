@@ -17,6 +17,9 @@ export default class CreateAccountPage extends React.Component {
         const data = new FormData(event.target);
         console.log("Data", data);
         for (var [key, value] of data.entries()) {
+            if (`${key}`==="firstname") {
+                alert("Thank you for creating account with us, " + value);
+            }
             console.log(`${key}` , ":" ,`${value}`);
         }
     }
@@ -29,7 +32,7 @@ export default class CreateAccountPage extends React.Component {
         return ( 
             <div>
                 <Header/> 
-                <div className="jumbotron container d-flex justify-content-center">
+                <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
                     <form  ref={form => this.form = form} onSubmit={this.handleSubmit} className="form-group"> 
                         <legend> Create Account </legend>
                         <input className="inputAreaStyle "
