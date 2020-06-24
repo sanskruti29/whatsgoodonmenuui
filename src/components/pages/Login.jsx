@@ -1,5 +1,4 @@
 import React from "react";
-import Header from './Header';
 
 export default class LoginPage extends React.Component{ 
     constructor(props) {
@@ -28,7 +27,6 @@ export default class LoginPage extends React.Component{
     render() {
         return ( 
             <div>
-                <Header/> 
                 <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
                     <form method="post" onSubmit={this.handleSubmit} ref={form => this.form = form} > 
                         <legend> Login </legend>

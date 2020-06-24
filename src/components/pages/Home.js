@@ -1,12 +1,10 @@
 import React from "react";
 import './Styles.css';
 import './Styles.css';
-import Header from './Header';
 import TotalVisits from '../VisitorInfo/TotalVisits';
 import VisitingFrom from '../VisitorInfo/VisitingFrom';
 import UniqueVisitors from '../VisitorInfo/UniqueVisitors';
 import ImageCarousel from './ImageCarousel';
-import Footer from './Footer';
 
 function UserName(props){
     return(
@@ -85,7 +83,6 @@ export default class Home extends React.Component{
     render(){
         return(
           <div>
-            <Header/>
             <ImageCarousel/>
             <Comment
                 date = {comment.date}
@@ -93,7 +90,6 @@ export default class Home extends React.Component{
                 text = {comment.text}
                 time ={comment.time}
             />
-            <Footer/>
           </div>    
         );    
     }

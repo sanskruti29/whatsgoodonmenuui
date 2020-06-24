@@ -14,24 +14,16 @@
   text-align: left;
   padding: 0.5em;
   margin-top: 10;
-  font-size: 1em; 
-
-  position: fixed bottom;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 50px;
-   background-color: red;
-   color: white;
-   text-align: center;
 */
-   position: fixed bottom;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #c21a09;
-   color: white;
-   text-align: center;
+  position: fixed bottom;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #c21a09;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+  padding: 0.35cm;
 }
 /*-----------------------------*/
 
