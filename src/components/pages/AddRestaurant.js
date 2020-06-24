@@ -1,7 +1,6 @@
 import React from 'react';
 import { input } from 'react-advanced-form-addons'
 import './Styles.css';
-import Header from './Header';
 
 export default class AddRestaurantPage extends React.Component {
     constructor(props) {
@@ -33,7 +32,6 @@ export default class AddRestaurantPage extends React.Component {
     render() {
         return (
             <div>
-                <Header/>
                 <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
                     <form method="post" onSubmit={this.handleSubmit}  ref={form => this.form = form}>
                     <legend> Add Restaurant </legend>

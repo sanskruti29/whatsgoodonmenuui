@@ -1,0 +1,24 @@
+/* Header.js */
+.brandNameFontStyle {
+    color: #ffffff;
+    /* font-family: initial; */
+    font-weight: 400;
+    font-size: large;
+}
+
+/* Header.js */
+.navOptions{
+    color: #ffffff;
+    font-weight: 300;
+    font-size: medium;
+}
+
+.navOptions :hover{
+    text-decoration: underline;
+    /* zoom: 1.05; */
+  }
+
+/* Header.js */
+.navBarColorStyle {
+    background-color:#c21a09;
+}

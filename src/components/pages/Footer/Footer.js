@@ -9,6 +9,12 @@ export default class Footer extends React.Component{
                 <Nav className=" container justify-content-center navOptions">
                     <Nav.Link active="false" href="/aboutUs" style={{color:"white"}}>About us</Nav.Link> 
                 </Nav>
+
+                <div className="row">
+                    <p className="col-sm">
+                        &copy; {new Date().getFullYear()} What's Good on Menu | All rights reserved 
+                    </p>
+                </div>
             </div>
         );
     }

@@ -1,7 +1,6 @@
 import React from "react";
 import { form } from 'react-advanced-form'
 import { input } from 'react-advanced-form-addons'
-import Header from './Header';
 import './Styles.css';
 
 export default class CreateAccountPage extends React.Component {
@@ -31,7 +30,6 @@ export default class CreateAccountPage extends React.Component {
     render() {
         return ( 
             <div>
-                <Header/> 
                 <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
                     <form  ref={form => this.form = form} onSubmit={this.handleSubmit} className="form-group"> 
                         <legend> Create Account </legend>
