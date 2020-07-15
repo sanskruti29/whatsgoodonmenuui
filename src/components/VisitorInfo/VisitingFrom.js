@@ -22,7 +22,7 @@ export default class UserCount extends  React.Component {
             });
     }
 
-    render(){
+    render() {
         return(
             <div>
                 <label>You are visiting from: {this.state.device}</label><br/>
