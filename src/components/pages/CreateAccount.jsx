@@ -1,48 +1,85 @@
 import React from "react";
-import { form } from 'react-advanced-form'
-import { input } from 'react-advanced-form-addons'
 import './Styles.css';
+import {API_ROOT} from '../VisitorInfo/app-config'
 
 export default class CreateAccountPage extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: null,
+            created: false
+        };
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleReset = this.handleReset.bind(this);
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log("Event", event);
-        const data = new FormData(event.target);
-        console.log("Data", data);
-        for (var [key, value] of data.entries()) {
+        //console.log("Event", event);
+        // const data = new FormData(event.target);
+        // console.log("Data", data);
+        // for (var [key, value] of data.entries()) {
+        //     if (`${key}`==="firstname") {
+        //         alert("Thank you for creating account with us, " + value);
+        //     }
+        //     console.log(`${key}` , ":" ,`${value}`);
+        // }
+
+        const formData = new FormData(event.target);
+        console.log("Data", formData);
+        for (var [key, value] of formData.entries()) {
             if (`${key}`==="firstname") {
                 alert("Thank you for creating account with us, " + value);
             }
             console.log(`${key}` , ":" ,`${value}`);
         }
-    }
 
+        var object = {};
+        formData.forEach(function(value, key){
+            object[key] = value;
+        });
+
+        fetch(`${API_ROOT}/users`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(object)
+        })
+        .then(d => console.log("Account created"),
+            this.setState((state)=> {
+                return {created: true}
+            })
+        );
+    }
+    
     handleReset = () => {
         this.form.reset();
     }
 
     render() {
-        return ( 
-            <div>
+        if(this.state.created === true){
+            return(
+                <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
+                    <label>Account Created!</label>
+                </div>
+            );
+        } else {
+            return (  
                 <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
                     <form  ref={form => this.form = form} onSubmit={this.handleSubmit} className="form-group"> 
                         <legend> Create Account </legend>
                         <input className="inputAreaStyle "
-                            id="firstname"
-                            name="firstname" 
+                            id="firstName"
+                            name="firstName" 
                             type="text"
                             placeholder="First Name"
                         />
                         <br/><br/>
                         <input className="inputAreaStyle"
-                            id="lastname"
-                            name="lastname" 
+                            id="lastName"
+                            name="lastName" 
                             type="text"
                             placeholder="Last Name"
                         />
@@ -63,8 +100,7 @@ export default class CreateAccountPage extends React.Component {
                         <br/><br/>
                         <div className="buttonSpace" >
                             <button 
-                                className="submitButton" 
-                                // onClick={this.handleSubmit} 
+                                className="submitButton"  
                                 type="submit"
                                 value="Create Account"
                             > Create Account
@@ -79,7 +115,7 @@ export default class CreateAccountPage extends React.Component {
                         </div>             
                     </form>
                 </div>
-            </div> 
-        );
+            );
+        }
     }
 }
