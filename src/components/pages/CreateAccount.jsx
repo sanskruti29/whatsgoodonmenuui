@@ -16,24 +16,14 @@ export default class CreateAccountPage extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        //console.log("Event", event);
-        // const data = new FormData(event.target);
-        // console.log("Data", data);
-        // for (var [key, value] of data.entries()) {
+        const formData = new FormData(event.target);
+        // console.log("Data", formData);
+        // for (var [key, value] of formData.entries()) {
         //     if (`${key}`==="firstname") {
         //         alert("Thank you for creating account with us, " + value);
         //     }
         //     console.log(`${key}` , ":" ,`${value}`);
         // }
-
-        const formData = new FormData(event.target);
-        console.log("Data", formData);
-        for (var [key, value] of formData.entries()) {
-            if (`${key}`==="firstname") {
-                alert("Thank you for creating account with us, " + value);
-            }
-            console.log(`${key}` , ":" ,`${value}`);
-        }
 
         var object = {};
         formData.forEach(function(value, key){
@@ -75,6 +65,7 @@ export default class CreateAccountPage extends React.Component {
                             name="firstName" 
                             type="text"
                             placeholder="First Name"
+                            required
                         />
                         <br/><br/>
                         <input className="inputAreaStyle"
@@ -82,6 +73,7 @@ export default class CreateAccountPage extends React.Component {
                             name="lastName" 
                             type="text"
                             placeholder="Last Name"
+                            required
                         />
                         <br/><br/>
                         <input className="inputAreaStyle"
@@ -89,6 +81,7 @@ export default class CreateAccountPage extends React.Component {
                             name="email"
                             type="email"
                             placeholder="Email" 
+                            required
                         />
                         <br/><br/>
                         <input className="inputAreaStyle"
@@ -96,6 +89,7 @@ export default class CreateAccountPage extends React.Component {
                             name="password"
                             type="password"
                             placeholder="Password" 
+                            required
                         />
                         <br/><br/>
                         <div className="buttonSpace" >
