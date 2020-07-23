@@ -1,6 +1,6 @@
 /* Header.js */
 .brandNameFontStyle {
-    color: #ffffff;
+    color: black;
     /* font-family: initial; */
     font-weight: 400;
     font-size: large;
@@ -8,7 +8,7 @@
 
 /* Header.js */
 .navOptions{
-    color: #ffffff;
+    color: black;
     font-weight: 300;
     font-size: medium;
 }
@@ -20,5 +20,14 @@
 
 /* Header.js */
 .navBarColorStyle {
-    background-color:#c21a09;
+    background-color: #d32323;
+    /* background-color:#c21a09; */
 }
+
+/* 
+.header__373c0__AlFmH {
+    padding: 12px 0;
+    background: #d32323;
+    position: relative;
+    z-index: 1012!important;
+} */

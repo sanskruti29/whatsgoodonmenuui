@@ -112,3 +112,24 @@
   color: black;
 }
 /*-----------------------------*/
+
+.error404{
+  margin-top: 65px;
+  max-width: 100%;
+  height: auto;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+  justify-content: center;
+  
+}
+
+.h5tag {
+  text-align: center;
+  padding-top: 65px;
+}
+
+.error404img{
+  align-self: center;
+  width: 50vw;
+}

@@ -1,9 +1,8 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from "react"
 import './Styles.css'
 import menu from './images/menu.png'
 import Navbar from 'react-bootstrap/Navbar'
-import { Nav} from 'react-bootstrap';
+import { Nav} from 'react-bootstrap'
 
 export default class Header extends React.Component {
   render(){   
@@ -22,9 +21,9 @@ export default class Header extends React.Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="navOptions">
-              <Nav.Link active="false" href="/createAccount">Create Account</Nav.Link> 
+              <Nav.Link active="false" href="/signup">Sign Up</Nav.Link> 
               <Nav.Link active="false" href="/login">Login</Nav.Link>
-              <Nav.Link active="false" href="/addRestaurant">Add Restaurant</Nav.Link>
+              {/* <Nav.Link active="false" href="/addrestaurant">Add Restaurant</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
