@@ -5,13 +5,15 @@ import '../Styles.css'
 import TextInput from '../../FormComponents/TextInput';
 import {API_ROOT} from '../../../../VisitorInfo/app-config'
 
+// https://codepen.io/team/css-tricks/pen/XVBLRM?editors=1100
 export default class signUpForm extends React.Component{
  
   constructor(props){
     super(props);
     this.state={
       data: null,
-      signUp: false
+      signUp: false,
+      message: null
     }
   }
 
@@ -19,7 +21,7 @@ export default class signUpForm extends React.Component{
     if(this.state.signUp === true){
       return(
         <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
-          <label>Account has been created!</label>
+          <label>{this.state.message}</label>
         </div>
       );
     } else {
@@ -59,15 +61,12 @@ export default class signUpForm extends React.Component{
                 },
                 body: JSON.stringify(values, null, 2)
               })
-              .then(d=> console.log("Account created"),
-                this.setState((state)=>{
-                  return{signUp: true}
-                })
-              );
+              .then(response => response.json())
+              .then(parsedData => this.setState({message: parsedData.message, signUp: true}));
               setSubmitting(false);
             }}
           >
-          <div className="jumbotron container d-flex justify-content-center formStyle" style={{marginTop: 10}}>
+          <div className="jumbotron container justify-content-center formStyle" style={{marginTop: 10}}>
             <h5>Sign Up for What's Good on Menu</h5>
             <Form>
               <TextInput
