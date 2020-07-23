@@ -7,7 +7,7 @@ export default class Footer extends React.Component{
         return (
             <div className="FooterStyle"> 
                 <Nav className=" container justify-content-center navOptions">
-                    <Nav.Link active="false" href="/aboutUs" style={{color:"white"}}>About us</Nav.Link> 
+                    <Nav.Link active="false" href="/aboutus" style={{color:"white"}}>About us</Nav.Link> 
                 </Nav>
 
                 <div className="row">

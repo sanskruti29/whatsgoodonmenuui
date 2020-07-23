@@ -1,5 +1,5 @@
 import React from "react";
-import {API_ROOT} from '../VisitorInfo/app-config'
+import {API_ROOT} from '../../VisitorInfo/app-config'
 
 export default class LoginPage extends React.Component{ 
     constructor(props) {
@@ -36,7 +36,7 @@ export default class LoginPage extends React.Component{
     }
 
     handleReset = () => {
-        this.form.reset() 
+        this.form.reset()
     }
 
     render() {
@@ -88,3 +88,8 @@ export default class LoginPage extends React.Component{
         }
     }
 }
+
+// Sign in to Yelp
+// New to Yelp? Sign up
+
+// By logging in, you agree to Yelp’s Terms of Service and Privacy Policy.

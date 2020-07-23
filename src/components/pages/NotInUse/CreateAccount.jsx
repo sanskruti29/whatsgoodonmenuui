@@ -1,6 +1,6 @@
 import React from "react";
 import './Styles.css';
-import {API_ROOT} from '../VisitorInfo/app-config'
+import {API_ROOT} from '../../VisitorInfo/app-config'
 
 export default class CreateAccountPage extends React.Component {
     constructor(props) {
