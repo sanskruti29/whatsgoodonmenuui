@@ -57,7 +57,7 @@ export default class LoginForm extends React.Component {
         >
         <div className="jumbotron container d-flex justify-content-center formStyle" style={{marginTop: 10}}>
         <p> Sign in to What's Good on Menu </p>
-        <p> New to What's Good on Menu? <a href="/createAccount"> Sign up </a></p>
+        <p> New to What's Good on Menu? <a href="/signup"> Sign up </a></p>
         <Form>
           <TextInput
             name="email"
