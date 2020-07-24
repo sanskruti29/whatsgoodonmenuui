@@ -11,7 +11,8 @@ export default class LoginForm extends React.Component {
     super(props);
     this.state={
       data: null,
-      loggedIn: false
+      loggedIn: false,
+      message : null
     }
   }
 
@@ -19,7 +20,7 @@ export default class LoginForm extends React.Component {
     if(this.state.loggedIn === true){
       return(
       <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
-          <label>You have logged in</label>
+          <label>{this.state.message}</label>
       </div>
       );
     } else {
@@ -47,11 +48,8 @@ export default class LoginForm extends React.Component {
               },
               body: JSON.stringify(values, null, 2)
             })
-            .then(d => console.log("Logged In"),
-              this.setState((state)=> {
-                return {loggedIn: true}
-              })
-            );
+            .then(response => response.json())
+            .then(parsedData => this.setState({message: parsedData.message, loggedIn: true}));
             setSubmitting(false);         
           }} 
         >
