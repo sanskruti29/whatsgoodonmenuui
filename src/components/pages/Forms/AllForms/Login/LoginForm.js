@@ -19,7 +19,7 @@ export default class LoginForm extends React.Component {
   render(){
     if(this.state.loggedIn === true){
       return(
-      <div className="jumbotron container d-flex justify-content-center" style={{marginTop: 10}}>
+      <div className="jumbotron container" style={{marginTop: 10}}>
           <label>{this.state.message}</label>
       </div>
       );
@@ -53,7 +53,7 @@ export default class LoginForm extends React.Component {
             setSubmitting(false);         
           }} 
         >
-        <div className="jumbotron container d-flex justify-content-center formStyle" style={{marginTop: 10}}>
+        <div className="jumbotron container formStyle" style={{marginTop: 10}}>
         <p> Sign in to What's Good on Menu </p>
         <p> New to What's Good on Menu? <a href="/signup"> Sign up </a></p>
         <Form>
