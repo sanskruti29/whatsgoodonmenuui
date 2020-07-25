@@ -1,14 +1,15 @@
 /* Header.js */
 .brandNameFontStyle {
-    color: black;
+    color: white;
     /* font-family: initial; */
     font-weight: 400;
     font-size: large;
+    font-size: 1.4rem;
 }
 
 /* Header.js */
 .navOptions{
-    color: black;
+    color: white;
     font-weight: 300;
     font-size: medium;
 }

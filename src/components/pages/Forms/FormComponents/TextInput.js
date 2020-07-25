@@ -9,7 +9,7 @@ const TextInput = ({ label, ...props }) => {
     return (
         <div className="group">
             <label htmlFor={props.id || props.name}>{label}</label>
-            <input className="text-input inputAreaStyle" {...field} {...props} />
+            <input className="inputAreaStyle" {...field} {...props} />
             {meta.touched && meta.error ? (
                 <div className="error">{meta.error}</div>
             ) : null }
