@@ -20,7 +20,7 @@ export default class signUpForm extends React.Component{
   render(){
     if(this.state.signUp === true){
       return(
-        <div className="jumbotron container" style={{marginTop: 10}}>
+        <div className="jumbotron container formStyle" style={{marginTop: 10}}>
           <label>{this.state.message}</label>
         </div>
       );
@@ -66,7 +66,7 @@ export default class signUpForm extends React.Component{
               setSubmitting(false);
             }}
           >
-          <div className="jumbotron container" style={{marginTop: 10}}>
+          <div className="jumbotron container formStyle" style={{marginTop: 10}}>
             <h5>Sign Up for What's Good on Menu</h5>
             <Form>
               <TextInput
