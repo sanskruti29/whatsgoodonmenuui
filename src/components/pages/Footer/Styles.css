@@ -1,8 +1,17 @@
 /* Footer.js */
 .FooterStyle {
   background-color: #d32323;
-  color: white;
   text-align: center;
   padding: 0.1em;
   font-size: 1rem;
+}
+
+.link{
+  text-decoration: none;
+  color:#fff;
+}
+
+.link:hover{
+  text-decoration: underline;
+  color: #fff;
 }

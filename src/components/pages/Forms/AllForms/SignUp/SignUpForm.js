@@ -2,10 +2,10 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import '../Styles.css'
-import TextInput from '../../FormComponents/TextInput';
+import TextInput from '../../FormComponents/TextInput/TextInput';
 import {API_ROOT} from '../../../../VisitorInfo/app-config'
 
-// https://codepen.io/team/css-tricks/pen/XVBLRM?editors=1100
+
 export default class signUpForm extends React.Component{
  
   constructor(props){
@@ -20,7 +20,7 @@ export default class signUpForm extends React.Component{
   render(){
     if(this.state.signUp === true){
       return(
-        <div className="jumbotron container formStyle" style={{marginTop: 10}}>
+        <div className=" container formStyle">
           <label>{this.state.message}</label>
         </div>
       );
@@ -66,31 +66,36 @@ export default class signUpForm extends React.Component{
               setSubmitting(false);
             }}
           >
-          <div className="jumbotron container formStyle" style={{marginTop: 10}}>
-            <h5>Sign Up for What's Good on Menu</h5>
-            <Form>
-              <TextInput
-                name="firstName"
-                type="text"
-                placeholder="First Name"
-              />
-              <TextInput
-                name="lastName"
-                type="text"
-                placeholder="Last Name"
-              />
-              <TextInput
-                name="email"
-                type="email"
-                placeholder="Email Address"
-              />
-              <TextInput
-                name="password"
-                type="password"
-                placeholder="Password"
-              />
-              <button className="buttonStyle" type="submit">Submit</button>
-            </Form>
+          <div className="formContainer">
+            <p>Sign Up for <em>What's Good on Menu</em></p>
+            <hr/>
+            <div className="formStyle">
+              <Form>
+                <TextInput
+                  name="firstName"
+                  type="text"
+                  placeholder="First Name"
+                />
+                <TextInput
+                  name="lastName"
+                  type="text"
+                  placeholder="Last Name"
+                />
+                <TextInput
+                  name="email"
+                  type="email"
+                  placeholder="Email Address"
+                />
+                <TextInput
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                />
+                <button className="buttonStyle" type="submit">Submit</button>
+              </Form>
+            </div>
+            <hr/>
+            <p> Have an account? <a href="/login"> Login</a></p>
           </div>
           </Formik>
         </div>

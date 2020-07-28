@@ -1,0 +1,39 @@
+.inputAreaStyle {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem; 
+    border: 1px solid #bbb;
+    font-family: inherit;
+    border-radius: 5px; 
+    box-shadow: 90px;
+    width: 8cm;
+    cursor: text;
+}
+
+.inputAreaStyle:hover {
+    background-color:#fcfcff;
+}
+
+.inputAreaStyle:focus {
+    /* background-color:#F0F8FF; */
+    outline: none;
+    border: 0.1px solid cornflowerblue;
+    position: unset;
+    /* border-bottom: 1px solid #666; */
+}
+
+.error {
+    font-size: 0.7rem;
+    color: red;
+    margin-top: 0.25rem;
+}
+
+.group {
+    margin-bottom: 1em;
+    padding: 0.1rem;
+}
+
+.field {
+    display: flex;
+    flex-flow: column-reverse;
+}
+

@@ -21,8 +21,8 @@ export default class Header extends React.Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="navOptions">
-              <Nav.Link active="false" href="/signup">Sign Up</Nav.Link> 
-              <Nav.Link active="false" href="/login">Login</Nav.Link>
+              <Nav.Link className="link" active="true" href="/signup">Sign Up</Nav.Link> 
+              <Nav.Link className="link" active="true" href="/login">Login</Nav.Link>
               {/* <Nav.Link active="false" href="/addrestaurant">Add Restaurant</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>

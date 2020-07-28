@@ -6,12 +6,12 @@ export default class Footer extends React.Component{
     render(){
         return (
             <div className="FooterStyle"> 
-                <Nav className=" container justify-content-center navOptions">
-                    <Nav.Link active="false" href="/aboutus" style={{color:"white"}}>About us</Nav.Link> 
+                <Nav className=" container justify-content-center">
+                    <Nav.Link className="link" active="false" href="/aboutus">About us</Nav.Link> 
                 </Nav>
 
                 <div className="row">
-                    <p className="col-sm">
+                    <p className="col-sm text-white">
                         &copy; {new Date().getFullYear()} What's Good on Menu | All rights reserved 
                     </p>
                 </div>
