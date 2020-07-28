@@ -32,3 +32,14 @@
     position: relative;
     z-index: 1012!important;
 } */
+
+.link{
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.1rem;
+}
+  
+.link:hover{
+    text-decoration: underline;
+    color: #fff;
+}

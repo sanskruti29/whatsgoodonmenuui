@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import '../Styles.css'
-import TextInput from '../../FormComponents/TextInput';
+import TextInput from '../../FormComponents/TextInput/TextInput';
 import {API_ROOT} from '../../../../VisitorInfo/app-config'
 
 export default class LoginForm extends React.Component {
@@ -19,7 +19,7 @@ export default class LoginForm extends React.Component {
   render(){
     if(this.state.loggedIn === true){
       return(
-      <div className="jumbotron container" style={{marginTop: 10}}>
+      <div className=" container">
           <label>{this.state.message}</label>
       </div>
       );
@@ -53,22 +53,26 @@ export default class LoginForm extends React.Component {
             setSubmitting(false);         
           }} 
         >
-        <div className="jumbotron container formStyle" style={{marginTop: 10}}>
-        <p> Sign in to What's Good on Menu </p>
-        <p> New to What's Good on Menu? <a href="/signup"> Sign up </a></p>
-        <Form>
-          <TextInput
-            name="email"
-            type="email"
-            placeholder="Email Address"
-          />
-          <TextInput 
-            name="password"
-            type="password"
-            placeholder= "Password"
-          />
-          <button className="buttonStyle" type="submit">Submit</button>
-        </Form>
+        <div className="formContainer">
+        <p> Sign in to <em> What's Good on Menu </em></p>
+        <hr/>
+        <div className="formStyle">
+          <Form>
+            <TextInput
+              name="email"
+              type="email"
+              placeholder="Email Address"
+            />
+            <TextInput 
+              name="password"
+              type="password"
+              placeholder= "Password"
+            />
+            <button className="buttonStyle" type="submit">Submit</button>
+          </Form>
+        </div>
+        <hr/>
+        <p> New to <em>What's Good on Menu?</em> <a href="/signup"> Sign up </a></p>
         </div>
         </Formik>
         </div>
@@ -76,3 +80,4 @@ export default class LoginForm extends React.Component {
     }
   }
 }
+

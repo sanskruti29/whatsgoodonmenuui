@@ -1,3 +1,5 @@
+
+
 /* Clock.js */
 .allText {
   font-family: "Times New Roman", Times, serif;
@@ -113,23 +115,29 @@
 }
 /*-----------------------------*/
 
-.error404{
-  margin-top: 65px;
-  max-width: 100%;
-  height: auto;
-  width: 960px;
-  margin: 0 auto;
-  padding: 0 15px;
+
+/*--------------404.js---------------*/
+
+.error404Container{
+  /* background-color: #ddd; */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  
+}
+
+.error404{
+  margin: 0 auto; 
+  padding: 0 auto;
+
+}
+
+.error404img{
+  width: 40vw;
+  height: 50vh;
 }
 
 .h5tag {
   text-align: center;
   padding-top: 65px;
 }
-
-.error404img{
-  align-self: center;
-  width: 50vw;
-}
+/*-----------------------------*/
