@@ -248,4 +248,10 @@ styled is a way to create React components that have styles attached to them.
 npm install --save @emotion/styled
 ```
 
+### React icons
+
+```javascript/bash
+npm install react-icons
+```
+
 <!-- npm@6.14.6  on July 17-->

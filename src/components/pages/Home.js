@@ -1,6 +1,5 @@
 import React from "react";
 import './Styles.css';
-import './Styles.css';
 import TotalVisits from '../VisitorInfo/TotalVisits';
 import VisitingFrom from '../VisitorInfo/VisitingFrom';
 import UniqueVisitors from '../VisitorInfo/UniqueVisitors';
@@ -62,6 +61,7 @@ function Comment(props){
             <LinkedIn/>
             <GitHub/>
             <Twitter/>
+            
             <br/>
             <TotalVisits/>
             <UniqueVisitors/>
@@ -82,7 +82,7 @@ const comment = {
 export default class Home extends React.Component{  
     render(){
         return(
-          <div>
+          <div className="container">
             <ImageCarousel/>
             <Comment
                 date = {comment.date}

@@ -141,3 +141,22 @@
   padding-top: 65px;
 }
 /*-----------------------------*/
+
+/*----------StarRating.js-------------------*/
+input[type="radio"]{
+  display: none;
+}
+
+.star{
+  cursor: pointer;
+  transition: yellow 200ms;
+}
+
+.starContainer {
+  text-align: center;
+  margin: 2%;
+  padding: 2%;
+}
+/*-----------------------------*/
+
+

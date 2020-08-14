@@ -23,6 +23,7 @@ export default class Header extends React.Component {
             <Nav className="navOptions">
               <Nav.Link className="link" active="true" href="/signup">Sign Up</Nav.Link> 
               <Nav.Link className="link" active="true" href="/login">Login</Nav.Link>
+              <Nav.Link className="link" active="true" href="/rating">Rating</Nav.Link>
               {/* <Nav.Link active="false" href="/addrestaurant">Add Restaurant</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
