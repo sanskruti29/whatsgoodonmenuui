@@ -1,0 +1,71 @@
+.review{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    border: 1px solid black;
+    box-shadow: 1px 1px #0d0d0d 2px 2px #0d0d0d;
+    padding: 1rem;
+    width: 43rem;
+}
+
+.form>input, textarea, button{
+    display: block;
+    margin: .5rem auto 0 auto;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+.form>label{
+    margin: .5rem auto 0 auto;
+}
+
+.form>input, textarea {
+    width: calc(100% );
+}
+
+.form>button{
+    /* border: 1px solid #0d0d0d;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(194,26,9,1) 0%, rgb(230, 4, 4) 100%); */
+
+    padding: 0.5rem 1.25rem;
+
+    border-radius: 10px;
+    /* background-color: #4a5568; */
+    background: linear-gradient(90deg, rgba(194,26,9,1) 0%, rgb(230, 4, 4) 100%);
+    border: 2px solid transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form>button:focus{
+    outline: none;
+}
+
+.form>input:focus,textarea:focus {
+    outline: none;
+    border: 0.1px solid cornflowerblue;
+    position: unset;
+}
+
+h2, h4 {
+    margin: 0 0 1rem 0;
+}
+
+.reviewItem{
+    border: 1px solid #0d0d0d;
+    box-shadow: 1px 1px #0d0d0d 2px 2px #0d0d0d;
+    padding: 1rem;
+    width: 43rem;
+    margin-top: 1rem;
+}

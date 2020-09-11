@@ -1,9 +1,10 @@
-import React from "react";
-import './Styles.css';
-import TotalVisits from '../VisitorInfo/TotalVisits';
-import VisitingFrom from '../VisitorInfo/VisitingFrom';
-import UniqueVisitors from '../VisitorInfo/UniqueVisitors';
-import ImageCarousel from './ImageCarousel';
+import React from "react"
+import './Styles.css'
+import TotalVisits from '../VisitorInfo/TotalVisits'
+import VisitingFrom from '../VisitorInfo/VisitingFrom'
+import UniqueVisitors from '../VisitorInfo/UniqueVisitors'
+import ImageCarousel from './ImageCarousel'
+import Review from './Review/Review'
 
 function UserName(props){
     return(
@@ -13,7 +14,7 @@ function UserName(props){
     );
 }
 
-function LinkedIn(props){
+function LinkedIn(){
     return(
         <div>
             <a target="blank" href="https://www.linkedin.com/in/sanskruti-kolpe/"> 
@@ -24,7 +25,7 @@ function LinkedIn(props){
     );
 }
 
-function GitHub(props){
+function GitHub(){
     return(
         <div>
             <a target="blank" href="https://github.com/sanskruti29"> 
@@ -35,7 +36,7 @@ function GitHub(props){
     );
 }
 
-function Twitter(props){
+function Twitter(){
     return(
         <div>
             <a target="blank" href="https://twitter.com/CultureCoder">
@@ -84,6 +85,7 @@ export default class Home extends React.Component{
         return(
           <div className="container">
             <ImageCarousel/>
+            <Review/>
             <Comment
                 date = {comment.date}
                 user = {comment.user}

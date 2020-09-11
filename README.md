@@ -210,6 +210,14 @@ kubectl apply -f k8s/menu-ui-deployment.yaml
 
 Installation of external frameworks and libraries:
 
+### React Router DOM
+
+Allows you to handle routes in a web app, using dynamic routing
+
+``` Javascript/bash
+npm install react-router-dom
+```
+
 ### Formik
 
 Formik is form library for React:
@@ -252,6 +260,12 @@ npm install --save @emotion/styled
 
 ```javascript/bash
 npm install react-icons
+```
+
+### ID
+
+```javascript/bash
+npm install uuidv4
 ```
 
 <!-- npm@6.14.6  on July 17-->
