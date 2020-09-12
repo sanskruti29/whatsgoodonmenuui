@@ -268,4 +268,5 @@ npm install react-icons
 npm install uuidv4
 ```
 
+npm install react-star-rating-component --save
 <!-- npm@6.14.6  on July 17-->

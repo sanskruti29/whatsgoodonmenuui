@@ -10,6 +10,7 @@ const Review = () => {
 
     const [form, setForm] = useState(
         {
+            star: 0,
             restaurant: "", 
             review: "", 
             id: v4()
@@ -17,7 +18,7 @@ const Review = () => {
     )
 
     const [editing, setEditing] = useState(false)
-
+    
     return (
         <div className="review">
             <ReviewForm 
