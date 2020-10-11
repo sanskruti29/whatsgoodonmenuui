@@ -147,6 +147,9 @@ To create or update the k8s deployment
 ```kubernetes
 kubectl apply -f k8s/menu-ui-deployment.yaml  
 kubectl apply -f k8s/menu-ui-backend-service.yaml  
+
+kubectl apply -f k8s-manual/menu-ui-backend-service-manual.yaml  
+
 ```
 
 For Ingress/Load Balancer, following command from <https://github.com/CoderPraBhu/coderprabhu-k8s> is applied.
@@ -198,12 +201,17 @@ kubectl describe service menu-ui-backend
 ```docker
 docker build -f DockerfileProd -t gcr.io/kubegcp-256806/menu-ui:v13 .
 docker push gcr.io/kubegcp-256806/menu-ui:v13
+
+docker build -f DockerfileProd -t gcr.io/all-projects-292200/menu-ui:v14 .
+docker push gcr.io/all-projects-292200/menu-ui:v14 
 ```
 
 Change version in k8s ->  menu-ui-deployment
 
 ```kubernetes
 kubectl apply -f k8s/menu-ui-deployment.yaml
+
+kubectl apply -f k8s-manual/menu-ui-deployment-manual.yaml
 ```
 
 ## Npm install
