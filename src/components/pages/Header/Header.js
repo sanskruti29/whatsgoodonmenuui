@@ -9,7 +9,7 @@ export default class Header extends React.Component {
     return(
       <div  className="container-small">
         <Navbar className= "navBarColorStyle" variant="dark" expand="lg">
-          <Navbar.Brand href="/" className="brandNameFontStyle" >
+          <Navbar.Brand href="https://whatsgoodonmenu.com" className="brandNameFontStyle" >
             <img
               alt="logo"
               src={menu}
