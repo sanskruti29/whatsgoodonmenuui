@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: menu-ui-app
-        image: gcr.io/kubegcp-256806/menu-ui:v12
+        image: gcr.io/all-projects-292200/menu-ui:v14
         ports:
         - containerPort: 8080
         resources:

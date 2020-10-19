@@ -47,6 +47,7 @@ const ReviewForm = ({form, setForm, reviews, setReviews, editing, setEditing}) =
             />
             <label htmlFor="star"> Rating: </label>
             <RatingForm 
+                key={reviews.id}
                 starFieldName="star"
                 handleChange={handleChange}
                 form={form}

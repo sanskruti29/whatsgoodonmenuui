@@ -12,21 +12,21 @@ export default class ImageCarousel extends React.Component {
                 <Carousel>
                     <Carousel.Item>
                         <img
-                            className="d-block w-100"                           
+                            className=" w-100"                           
                             src={f1}
                             alt="food1"
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                            className="d-block w-100"
+                            className="w-100"
                             src={f2}
                             alt="food2"
                         />
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                            className="d-block w-100"
+                            className=" w-100"
                             src={f4}
                             alt="food4"
                         />

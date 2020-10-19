@@ -6,16 +6,16 @@ metadata:
   name: menu-ui-backend
   namespace: default
 spec:
-  clusterIP: 10.27.251.232
+  clusterIP: 10.3.243.47
   externalTrafficPolicy: Cluster
   ports:
     - name: httpuiport
-      nodePort: 32718
+      nodePort: 32032
       port: 8080
       protocol: TCP
       targetPort: 8080
     - name: httpsuiport
-      nodePort: 31140
+      nodePort: 30630
       port: 443
       protocol: TCP
       targetPort: 8080

@@ -23,16 +23,16 @@ spec:
         tier: web
     spec:
       containers:
-      - image: gcr.io/kubegcp-256806/github.com/sanskruti29/whatsgoodonmenuui
-        imagePullPolicy: IfNotPresent
-        name: menu-ui-app
-        ports:
-          - containerPort: 8080
-            protocol: TCP
-        resources:
-          limits:
-            cpu: 200m
-            memory: 128Mi
-          requests:
-            cpu: 50m
-            memory: 24Mi
+        - image: gcr.io/all-projects-292200/github.com/sanskruti29/whatsgoodonmenuui
+          imagePullPolicy: IfNotPresent
+          name: menu-ui-app
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 24Mi
