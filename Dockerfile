@@ -1,5 +1,5 @@
 ###########################
-FROM node:13 as build-stage
+FROM node:14 as build-stage
 ###########################
 # install chrome for protractor tests
 #RUN apt-get -y update && apt-get install -y chromium libgconf-2-4
