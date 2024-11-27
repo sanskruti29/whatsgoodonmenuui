@@ -18,7 +18,7 @@
     "react-icons": "^3.11.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^5.3.4",
-    "react-scripts": "^3.4.4",
+    "react-scripts": "^5.0.1",
     "react-star-rating-component": "^1.4.1",
     "uuidv4": "^6.2.13",
     "yup": "^0.29.3"
