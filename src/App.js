@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 
 //local imports
 import NotFoundPage from "./components/pages/404"
@@ -21,17 +21,17 @@ class App extends Component{
         <div className="content-wrap">
           <Router>
             <Header/>
-            <Switch>
-              <Route exact path="/" component={Home}></Route>
-              <Route exact path="/signup" component={SignUpForm}></Route>
-              <Route exact path="/login" component={LoginForm}></Route>
-              <Route exact path="/addrestaurant" component={AddRestaurantPage}></Route>
-              <Route exact path="/aboutus" component={AboutUs}></Route>
-              <Route exact path="/rating" component={StarRating}></Route>
-              <Route exact path="/review" component={Review}></Route>
-              <Route exact path="/404" component={NotFoundPage}></Route>
-              <Redirect to="/404" />
-            </Switch>
+            <Routes>
+              <Route path="/" element={<Home/>}></Route>
+              <Route path="/signup" element={<SignUpForm/>}></Route>
+              <Route path="/login" element={<LoginForm/>}></Route>
+              <Route path="/addrestaurant" element={<AddRestaurantPage/>}></Route>
+              <Route path="/aboutus" element={<AboutUs/>}></Route>
+              <Route path="/rating" element={<StarRating/>}></Route>
+              <Route path="/review" element={<Review/>}></Route>
+              <Route path="/404" element={<NotFoundPage/>}></Route>
+              <Route path="*" element={<Navigate to="/404" />} />
+            </Routes>
           </Router>
         </div>
         <Footer/>

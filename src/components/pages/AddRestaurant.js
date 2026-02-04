@@ -1,5 +1,4 @@
 import React from 'react';
-import { input } from 'react-advanced-form-addons'
 import './Styles.css';
 
 export default class AddRestaurantPage extends React.Component {

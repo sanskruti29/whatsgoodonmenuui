@@ -1,7 +1,7 @@
 apiVersion: networking.gke.io/v1beta1
 kind: ManagedCertificate
 metadata:
-  name: whatsgoodonmenudotcommanagedcert
+  name: whatsgoodonmenudotcommanagedcert2025
 spec:
   domains:
     - whatsgoodonmenu.com

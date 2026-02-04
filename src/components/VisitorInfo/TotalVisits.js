@@ -13,7 +13,11 @@ export default class UserCount extends  React.Component {
     componentDidMount() {
         fetch(`${API_ROOT}/count`)
             .then(response => response.json())
-            .then(data => this.setState({ data }));
+            .then(data => this.setState({ data }))
+            .catch(error => {
+                console.error('Error fetching total visits:', error);
+                this.setState({ data: 'N/A' });
+            });
     }
 
     render(){

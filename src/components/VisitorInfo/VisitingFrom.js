@@ -19,6 +19,10 @@ export default class UserCount extends  React.Component {
                 var ip = data.ip;
                 this.setState({ device })
                 this.setState({ ip })
+            })
+            .catch(error => {
+                console.error('Error fetching visit info:', error);
+                this.setState({ device: 'Unknown', ip: 'N/A' });
             });
     }
 
