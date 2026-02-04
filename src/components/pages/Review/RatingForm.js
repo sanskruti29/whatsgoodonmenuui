@@ -15,7 +15,7 @@ const RatingForm = ({starFieldName,  handleChange, form, setForm}) => {
                             value={ratingIndex}
                             onClick={() => {
                                 // setRating(ratingIndex)
-                                setForm({...form, ["star"]: ratingIndex})
+                                setForm({...form, star: ratingIndex})
                                 }
                             }   
                             onChange={e => handleChange(e)} 
