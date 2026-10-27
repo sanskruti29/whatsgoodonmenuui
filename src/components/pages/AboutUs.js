@@ -1,12 +1,17 @@
 import React from 'react'
-import './Styles.css'
+import { Container } from 'react-bootstrap'
 
-export default class AboutUs extends React.Component{
-    render(){
-        return(
-            <div>
-                <p className="jumbotron-fluid container Comment">An application where users can review each menu-item on the restaurant’s menu.</p>
-            </div>
-        );
-    }
-}
+const AboutUs = () => (
+  <Container className="section" style={{ maxWidth: 720 }}>
+    <h1>About What's Good on Menu</h1>
+    <p className="lead muted">
+      An application where users can review each menu item on a restaurant's menu.
+    </p>
+    <p>
+      Restaurant ratings tell you if a place is good. We tell you what to order. Diners rate individual dishes,
+      so the next time you sit down you already know the standouts and what to skip.
+    </p>
+  </Container>
+)
+
+export default AboutUs

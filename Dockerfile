@@ -9,7 +9,7 @@ FROM node:25 AS build-stage
 #ENV CHROME_BIN /usr/bin/chromium-browser
 ###########################
 WORKDIR /app
-COPY package*.json /app/
+COPY package*.json .npmrc /app/
 ###########################
 RUN npm install
 COPY ./ /app/

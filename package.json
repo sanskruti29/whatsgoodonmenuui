@@ -17,7 +17,6 @@
     "react-router-dom": "^6.30.6",
     "react-scripts": "5.0.1",
     "styled-components": "^6.6.0",
-    "uuidv4": "^6.2.13",
     "yup": "^1.7.1"
   },
   "scripts": {
