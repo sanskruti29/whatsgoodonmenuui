@@ -1,11 +1,7 @@
-let backendHost;
+const hostname = typeof window !== 'undefined' && window.location ? window.location.hostname : '';
 
-const hostname = window && window.location && window.location.hostname;
+const isProduction = hostname === 'whatsgoodonmenu.com' || hostname === 'www.whatsgoodonmenu.com';
 
-if(hostname === 'whatsgoodonmenu.com' || 'www.whatsgoodonmenu.com') {
-  backendHost = 'https://api.whatsgoodonmenu.com';
-} else {
-  backendHost = 'http://localhost:8080';
-}
+const backendHost = isProduction ? 'https://api.whatsgoodonmenu.com' : 'http://localhost:8080';
 
 export const API_ROOT = `${backendHost}`;

@@ -1,83 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from 'react-router-dom'
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import '../Styles.css'
 import TextInput from '../../FormComponents/TextInput/TextInput';
-import {API_ROOT} from '../../../../VisitorInfo/app-config'
+import { postJson } from '../../FormComponents/postJson'
 
-export default class LoginForm extends React.Component {
+const schema = Yup.object({
+  email: Yup.string().email("Invalid email address").required("Required"),
+  password: Yup.string().required("Required"),
+})
 
-  constructor(props){
-    super(props);
-    this.state={
-      data: null,
-      loggedIn: false,
-      message : null
-    }
+const LoginForm = () => {
+  const [message, setMessage] = useState(null)
+  const [error, setError] = useState(null)
+
+  if (message) {
+    return (
+      <div className="auth-wrap"><div className="panel form-alert success mb-0" role="status">{message}</div></div>
+    )
   }
 
-  render(){
-    if(this.state.loggedIn === true){
-      return(
-      <div className=" container">
-          <label>{this.state.message}</label>
-      </div>
-      );
-    } else {
-      return(
-        <div>
+  return (
+    <div className="auth-wrap">
+      <div className="panel">
+        <h1>Welcome back</h1>
+        <p className="muted">Sign in to <em>What's Good on Menu</em></p>
         <Formik
-          initialValues={{
-            email: "",
-            password: "",
-          }}
-          validationSchema={Yup.object({
-            email: Yup.string()
-              .email("Invalid email address")
-              .required("Required"),
-            password: Yup.string()
-              .required("Required"),
-          })}
+          initialValues={{ email: "", password: "" }}
+          validationSchema={schema}
           onSubmit={async (values, { setSubmitting }) => {
-            await new Promise(r => setTimeout(r, 500));
-
-            fetch(`${API_ROOT}/login`, {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(values, null, 2)
-            })
-            .then(response => response.json())
-            .then(parsedData => this.setState({message: parsedData.message, loggedIn: true}));
-            setSubmitting(false);         
-          }} 
+            setError(null)
+            try {
+              const data = await postJson('/login', values)
+              setMessage(data.message || 'Logged in.')
+            } catch (e) {
+              setError(e.message === 'Failed to fetch' ? 'Could not reach the server. Please try again.' : e.message)
+            }
+            setSubmitting(false)
+          }}
         >
-        <div className="formContainer">
-        <p> Sign in to <em> What's Good on Menu </em></p>
-        <hr/>
-        <div className="formStyle">
-          <Form>
-            <TextInput
-              name="email"
-              type="email"
-              placeholder="Email Address"
-            />
-            <TextInput 
-              name="password"
-              type="password"
-              placeholder= "Password"
-            />
-            <button className="buttonStyle" type="submit">Submit</button>
-          </Form>
-        </div>
-        <hr/>
-        <p> New to <em>What's Good on Menu?</em> <a href="/signup"> Sign up </a></p>
-        </div>
+          {({ isSubmitting }) => (
+            <Form noValidate>
+              {error && <div className="form-alert" role="alert">{error}</div>}
+              <TextInput label="Email" name="email" type="email" autoComplete="email" placeholder="you@example.com" />
+              <TextInput label="Password" name="password" type="password" autoComplete="current-password" />
+              <button className="btn-brand w-100" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Signing in…' : 'Log in'}
+              </button>
+            </Form>
+          )}
         </Formik>
-        </div>
-      );
-    }
-  }
+        <p className="mt-4 mb-0 text-center">New here? <Link to="/signup">Create an account</Link></p>
+      </div>
+    </div>
+  )
 }
 
+export default LoginForm

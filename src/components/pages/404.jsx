@@ -1,16 +1,14 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import error404 from './images/404.png'
-import './Styles.css';
 
-const NotFoundPage = () => {
-    return(
-        <div className="error404Container">
-            <div className="error404">
-                <h5 className="h5tag">The page you’re looking for cannot be found!</h5>
-                <img className="error404img" src={error404} alt="error-404"/>
-            </div>
-        </div>
-    );
-};
+const NotFoundPage = () => (
+  <div className="not-found">
+    <h1>Page not found</h1>
+    <p className="muted">The page you're looking for doesn't exist or has moved.</p>
+    <Link className="btn-brand" to="/">Back to home</Link>
+    <div><img src={error404} alt="" /></div>
+  </div>
+);
 
 export default NotFoundPage;
