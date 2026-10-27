@@ -1,35 +1,29 @@
 import React from "react"
-import './Styles.css'
+import { NavLink, Link } from 'react-router-dom'
+import { Navbar, Nav, Container } from 'react-bootstrap'
 import menu from './images/menu.png'
-import Navbar from 'react-bootstrap/Navbar'
-import { Nav} from 'react-bootstrap'
 
-export default class Header extends React.Component {
-  render(){   
-    return(
-      <div  className="container-small">
-        <Navbar className= "navBarColorStyle" variant="dark" expand="lg">
-          <Navbar.Brand href="https://whatsgoodonmenu.com" className="brandNameFontStyle" >
-            <img
-              alt="logo"
-              src={menu}
-              width="50"
-              height="40"
-            />{' '}
-            Whats Good on Menu
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-            <Nav className="navOptions">
-              <Nav.Link className="link" active="true" href="/signup">Sign Up</Nav.Link> 
-              <Nav.Link className="link" active="true" href="/login">Login</Nav.Link>
-              <Nav.Link className="link" active="true" href="/rating">Rating</Nav.Link>
-              {/* <Nav.Link className="link" active="true" href="/review">Review</Nav.Link> */}
-              {/* <Nav.Link active="false" href="/addrestaurant">Add Restaurant</Nav.Link> */}
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </div>    
-    );    
-  }
-}
+const Header = () => (
+  <header>
+    <Navbar className="site-nav" variant="dark" expand="md" collapseOnSelect>
+      <Container>
+        <Navbar.Brand as={Link} to="/">
+          <img alt="" src={menu} />
+          What's Good on Menu
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="main-nav" />
+        <Navbar.Collapse id="main-nav" className="justify-content-end">
+          <Nav as="ul" className="align-items-md-center">
+            <Nav.Item as="li"><Nav.Link as={NavLink} to="/" end>Home</Nav.Link></Nav.Item>
+            <Nav.Item as="li"><Nav.Link as={NavLink} to="/addrestaurant">Add a restaurant</Nav.Link></Nav.Item>
+            <Nav.Item as="li"><Nav.Link as={NavLink} to="/aboutus">About</Nav.Link></Nav.Item>
+            <Nav.Item as="li"><Nav.Link as={NavLink} to="/login">Log in</Nav.Link></Nav.Item>
+            <Nav.Item as="li"><Nav.Link as={NavLink} to="/signup" className="nav-cta">Sign up</Nav.Link></Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  </header>
+)
+
+export default Header

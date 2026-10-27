@@ -1,98 +1,76 @@
-import React from "react"
-import './Styles.css'
-import TotalVisits from '../VisitorInfo/TotalVisits'
-import VisitingFrom from '../VisitorInfo/VisitingFrom'
-import UniqueVisitors from '../VisitorInfo/UniqueVisitors'
-import ImageCarousel from './ImageCarousel'
-import Review from './Review/Review'
+import React, { useState, useMemo } from "react"
+import { Link } from 'react-router-dom'
+import { Container, Row, Col } from 'react-bootstrap'
+import { FaSearch } from 'react-icons/fa'
+import { restaurants } from '../../data/restaurants'
+import { Stars } from './Rating/StarRating'
+import hero from './images/f3.jpg'
 
-function UserName(props){
-    return(
-        <div>
-            {props.user.name}
-        </div>
-    );
-}
+const average = (dishes) => dishes.reduce((sum, d) => sum + d.rating, 0) / dishes.length
 
-function LinkedIn(){
-    return(
-        <div>
-            <a target="blank" href="https://www.linkedin.com/in/sanskruti-kolpe/"> 
-                <img alt="linkedin" src="https://img.icons8.com/color/40/000000/linkedin.png"/>
-                <label> LinkedIn </label>
-            </a>
-        </div>
-    );
-}
+const Home = () => {
+  const [query, setQuery] = useState('')
 
-function GitHub(){
-    return(
-        <div>
-            <a target="blank" href="https://github.com/sanskruti29"> 
-                <img alt="git" src="https://img.icons8.com/windows/40/000000/github.png"/>
-                <label> GitHub </label>
-            </a>
-        </div>
-    );
-}
-
-function Twitter(){
-    return(
-        <div>
-            <a target="blank" href="https://twitter.com/CultureCoder">
-                <img alt= "twitter" src="https://img.icons8.com/fluent/40/000000/twitter.png"/>
-                <label> Twitter </label> 
-            </a>
-        </div>
-    );
-}
-
-function Comment(props){
-    return(
-        <div className="jumbotron container Comment"
-            style={{marginTop: 10}}>
-            <div>
-                <h6>It is {props.date.toLocaleDateString()} and {props.time.toLocaleTimeString()}</h6>
-            </div>
-            <div>
-                {props.text}
-            </div>
-            <UserName user={props.user}/>
-            <br/>
-            <LinkedIn/>
-            <GitHub/>
-            <Twitter/>
-            
-            <br/>
-            <TotalVisits/>
-            <UniqueVisitors/>
-            <VisitingFrom/>
-        </div>
+  const results = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    if (!q) return restaurants
+    return restaurants.filter((r) =>
+      [r.name, r.cuisine, ...r.dishes.map((d) => d.name)].some((text) => text.toLowerCase().includes(q))
     )
-}
+  }, [query])
 
-const comment = {
-    date: new Date(),
-    time: new Date(),
-    text: "This site is currently under development.",
-    user: {
-        name: 'Developer: Sanskruti Kolpe',
-    },
-};
-
-export default class Home extends React.Component{  
-    render(){
-        return(
-          <div className="container">
-            <ImageCarousel/>
-            <Review/>
-            <Comment
-                date = {comment.date}
-                user = {comment.user}
-                text = {comment.text}
-                time ={comment.time}
+  return (
+    <>
+      <section className="hero" style={{ '--hero-img': `url(${hero})` }}>
+        <Container>
+          <h1>Know what to order before you sit down</h1>
+          <p>Dish-by-dish ratings and reviews from people who've actually eaten there.</p>
+          <form className="search-bar" role="search" onSubmit={(e) => e.preventDefault()}>
+            <label htmlFor="search" className="visually-hidden">Search restaurants, cuisines or dishes</label>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search restaurants, cuisines or dishes"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
             />
-          </div>    
-        );    
-    }
+            <button className="btn-brand" type="submit"><FaSearch aria-hidden="true"/> Search</button>
+          </form>
+        </Container>
+      </section>
+
+      <Container className="section">
+        <div className="section-title">
+          <h2>Popular restaurants</h2>
+          <span className="muted">Sample listings. Real restaurants are coming soon.</span>
+        </div>
+        {results.length === 0 ? (
+          <div className="empty" role="status">
+            No matches for "{query}". Try a different dish or cuisine, or <Link to="/addrestaurant">add the restaurant</Link>.
+          </div>
+        ) : (
+          <Row as="ul" className="g-4 list-unstyled" aria-live="polite">
+            {results.map((r) => {
+              const avg = average(r.dishes)
+              return (
+                <Col as="li" key={r.id} sm={6} lg={3}>
+                  <Link className="r-card" to={`/restaurants/${r.id}`}>
+                    <img src={r.image} alt="" loading="lazy" width="640" height="400" />
+                    <div className="r-card-body">
+                      <h3>{r.name}</h3>
+                      <div className="mb-2"><Stars value={avg} /> <span className="muted">{avg.toFixed(1)}</span></div>
+                      <span className="chip">{r.cuisine}</span>
+                      <div className="muted small">Top dish: {[...r.dishes].sort((a, b) => b.rating - a.rating)[0].name}</div>
+                    </div>
+                  </Link>
+                </Col>
+              )
+            })}
+          </Row>
+        )}
+      </Container>
+    </>
+  )
 }
+
+export default Home
