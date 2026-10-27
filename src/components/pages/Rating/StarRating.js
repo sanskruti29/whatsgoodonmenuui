@@ -1,35 +1,30 @@
-import React, { useState } from 'react'
-import {FaStar} from 'react-icons/fa'
+import React, { useState, useId } from 'react'
+import { FaStar } from 'react-icons/fa'
 
-const StarRating = () => {
-    const [rating, setRating] = useState(null);
-    const [hover, setHover] = useState(null);
-    return(
-        <div className="starContainer">
-            {[...Array(5)].map((star, i) =>{
-                const ratingValue = i + 1; //bcz array starts with 0 
-                return (
-                <label>
-                    <input 
-                        type="radio" 
-                        name="star" 
-                        value={ratingValue}
-                        onClick={() => setRating(ratingValue)}    
-                    />
-                    <FaStar 
-                        className="star" 
-                        color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"} 
-                        size={25}
-                        onMouseEnter={() => setHover(ratingValue)}
-                        onMouseLeave={()=> setHover(null)}
-                    />
-                </label>
-                );
-            })}      
-            <p> Rating value: {rating} </p>   
-            <p> Hover value: {hover}</p>  
-        </div>
-    )
+export const Stars = ({ value, size = 18 }) => (
+  <span className="stars" role="img" aria-label={`${value} out of 5 stars`}>
+    {[1, 2, 3, 4, 5].map((n) => (
+      <FaStar key={n} size={size} className={n <= Math.round(value) ? 'star-on' : 'star-off'} aria-hidden="true" />
+    ))}
+  </span>
+)
+
+// Accessible radio-group star picker (keyboard: arrow keys; screen reader: "n stars").
+const StarRating = ({ value, onChange, label = 'Rating' }) => {
+  const [hover, setHover] = useState(null)
+  const name = useId()
+  return (
+    <fieldset className="star-input" onMouseLeave={() => setHover(null)}>
+      <legend className="visually-hidden">{label}</legend>
+      {[1, 2, 3, 4, 5].map((n) => (
+        <label key={n} onMouseEnter={() => setHover(n)}>
+          <span className="visually-hidden">{n} {n === 1 ? 'star' : 'stars'}</span>
+          <input type="radio" name={name} value={n} checked={value === n} onChange={() => onChange(n)} />
+          <FaStar size={28} className={n <= (hover || value) ? 'star-on' : 'star-off'} aria-hidden="true" />
+        </label>
+      ))}
+    </fieldset>
+  )
 }
 
-export default StarRating;
+export default StarRating

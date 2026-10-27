@@ -1,5 +1,5 @@
 ###########################
-FROM node:14 as build-stage
+FROM node:25 AS build-stage
 ###########################
 # install chrome for protractor tests
 #RUN apt-get -y update && apt-get install -y chromium libgconf-2-4
@@ -9,7 +9,7 @@ FROM node:14 as build-stage
 #ENV CHROME_BIN /usr/bin/chromium-browser
 ###########################
 WORKDIR /app
-COPY package*.json /app/
+COPY package*.json .npmrc /app/
 ###########################
 RUN npm install
 COPY ./ /app/
